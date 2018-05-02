@@ -1,3 +1,7 @@
+<?php
+require_once("conn.php");
+$rs = $conn->query("select * from item");
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -6,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>PATROS - HTML5 FREE TEMPLATE</title>
+		<title>金融实验咨询</title>
 		<!-- Bootstrap Core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom Fonts -->
@@ -37,9 +41,9 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right custom-menu">
 						<li class="active"><a href="#home">首页</a></li>
-						<li><a href="center.html">中心简介</a></li>
+						<li><a href="center.php">中心简介</a></li>
 						<li><a href="#services">申报书</a></li>
-						<li><a href="#meet-team">教学成果</a></li>
+						<li><a href="#meet-team">实验室资讯</a></li>
 						<li><a href="#portfolio1">政策制度</a></li>
 						<li><a href="#contact">典型案例</a></li>
 						<li><a href="blog.html">产学合作</a></li>
@@ -56,12 +60,6 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<div class="text-center"><h3>金融实验教学示范中心</h3></div>
-							</div>
-						</div>
-						<h4>Welcome to Eurasia university</h4>
-					</div>
-				</li>
 				<li><span>image2</span>
 					<div class="container">
 						<div class="row">
@@ -133,7 +131,7 @@
 							<div class="row">
 								<div class="col-md-12">
                                     <p> 西安欧亚学院的金融实验教学示范中心，起源于 2005 年的“金融与财务模拟实验室”和 2008 年的“金融柜台业务仿真实训室”。<br>
-                                        经过十年的不断完善与发展，金融实验教学示范中心已累计投入资金 400 余万元，包含理财工作室、实验银行、金融实验室 3 个已建成的基础实验室，互联网金融应用中心、金融自...<span class="color-elements"><a href="center.html">更多</a></span>。
+                                        经过十年的不断完善与发展，金融实验教学示范中心已累计投入资金 400 余万元，包含理财工作室、实验银行、金融实验室 3 个已建成的基础实验室，互联网金融应用中心、金融自...<span class="color-elements"><a href="center.php">更多</a></span>。
 									</p>
 								</div>
 							</div>
@@ -296,7 +294,7 @@
 							</div>
 							<div class="team-info">
 								<h3>Loreto Andas</h3>
-								<span>Developer</span>
+								<span>DeveloperDeveloper</span>
 							</div>
 							<p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
 							<ul class="social-icons">

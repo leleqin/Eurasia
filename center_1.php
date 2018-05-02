@@ -1,3 +1,10 @@
+<?php
+require_once("conn.php");
+$title = $_GET['title'];
+$rs = $conn->query("select * from item where item_name = '中心简介'AND item_title = '$title'");
+$rs2 = $conn->query("select * from item where item_name = '中心简介'");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +51,7 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right custom-menu">
-						<li><a href="index.php#home">Home</a></li>
+						<li><a href="index.php">首页</a></li>
 						<li><a href="index.php#about">About</a></li>
 						<li><a href="index.php#services">Services</a></li>
 						<li><a href="index.php#meet-team">Team</a></li>
@@ -60,24 +67,26 @@
     <!-- Page Content -->
 	    <div class="container blog singlepost">
 			<div class="row">
+                <?php
+                while($row=mysqli_fetch_assoc($rs)){
+                ?>
 				<article class="col-md-8">
-			        <h1 class="page-header sidebar-title">实验银行</h1>
-			        <img src="images/unsplash1.jpg" class="img-responsive" alt="photo" />
+			        <h1 class="page-header sidebar-title"><?php echo $row['item_title']?></h1>
+			        <img src="<?php echo $row['item_file']?>" class="img-responsive" alt="photo" style="width: 700px;height: 450px;"/>
 			        <hr>
 					<div class="row">
 						<div class="col-md-12">
 					</div>
 					</div>
-					<p>实验银行是专门为金融学、投资学专业学生提供银行业务模拟交易的专业实训室，旨在培养具备扎实金融理论基础和实践操作能力的高级应用型金融人才。</p>
-					<p>实验室硬件环境上全真模拟银行窗口化办公的真实业务处理场景，从窗口柜台、刷卡器、点钞机到密码键盘、叫号排队系统，全面模拟商业银行所有业务流程。同时软件系统上安装了南京艾诗恩软件及南京世格软件，改软件具备前沿的商业银行综合柜台业务、国际结算业务、信贷管理业务及自主经营管理业务等各项业务模拟系统，通过全真模拟教学软硬件，学生可完全进行银行综合柜台业务操作，理论与实践相结合的教学模式为银行等金融机构培养实战精英人才。</p>
-					<p>自2014年9月投入以来，实验银行承担《银行综合业务实训》、《商业银行经营学》、《银行会计》、《金融营销学》等课程，同时开展与学生活动相关第二课堂，让学生充分利用实验室的优越条件进行业务模拟。此外，实验银行还承接金融机构业务人员培训、产学合作项目及分院教师科研场所等活动，金融专业学生依托实验室荣获“赢在新起点——全国高校银行技能大赛”亚军，实验室的使用方式灵活多变，专业覆盖率达到100%，实验实训课程开出率达到100%。 </p>
-					<p>实验银行自投入使用以来，无论在教学改革、产学项目合作还是第二课堂的活动中，都发挥了重大作用。</p>
-
+					<p><?php echo $row['item_content'] ?></p>
 					<!-- Blog Comments -->
 			        <div class="comments1">
 
 			        </div>
 			    </article>
+                <?php
+                }
+                ?>
 				<!-- Blog Sidebar Column -->
 				<aside class="col-md-4 sidebar-padding">
 					<div class="blog-sidebar">
@@ -93,11 +102,15 @@
 						<h4 class="sidebar-title"><i class="fa fa-list-ul"></i> Categories</h4>
 						<hr>
 						<ul class="sidebar-list">
-							<li><a href="center.html">目录</a></li>
-							<li><a href="center_1.html">中心简介</a></li>
-							<li><a href="center_2.html">金融实验室</a></li>
-							<li><a href="center_3.html">实验银行</a></li>
-							<li><a href="center_4.html">理财工作室</a></li>
+							<li><a href="center.php">目录</a></li>
+                            <?php
+                            while ($row2 = mysqli_fetch_assoc($rs2)){
+                                $var = $row2['item_title'];
+                                ?>
+                                <li><a href="<?php echo "center_1.php?title=".$var ?>"><?php echo $row2['item_title']?></a></li>
+                                <?php
+                            }
+                            ?>
 						</ul>
 					</div>
 					<!-- Recent Posts -->
