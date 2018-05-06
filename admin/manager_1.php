@@ -1,14 +1,14 @@
 <?php
 require_once ("conn.php");
-$title = $_GET['title'];
-$rs = $conn->query("select * from item where item_title='$title'");
+$title = $_GET["select"];
+$rs = $conn->query("select * from item where item_name='$title'");
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <title>Table</title>
+    <title>信息管理</title>
     <link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
     <link rel="stylesheet" href="css/global.css" media="all">
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
@@ -16,6 +16,8 @@ $rs = $conn->query("select * from item where item_title='$title'");
 </head>
 
 <body>
+
+<a href="manager.php" class="layui-btn" style="margin-top: 20px;margin-left: 20px">返回</a>
 <div class="admin-main">
     <fieldset class="layui-elem-field">
         <legend>数据列表</legend>
@@ -23,12 +25,30 @@ $rs = $conn->query("select * from item where item_title='$title'");
             <table class="layui-table admin-table">
                 <thead>
                 <tr>
-                    <th>标题名</th>
-                    <th></th>
-                    <th>创建时间</th>
+                    <th>显示位置</th>
+                    <th>标题</th>
                     <th>创建人</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
+                <?php
+                while ($row = mysqli_fetch_assoc($rs)) {
+                    ?>
+                    <tr>
+                        <th><?php echo $row['item_Id']?></th>
+                        <th><?php echo $row['item_title']?></th>
+                        <th><?php echo $row['item_user']?></th>
+                        <th><?php echo $row['item_time']?></th>
+                        <td>
+                            <a href="" target="_blank" class="layui-btn layui-btn-normal layui-btn-mini">预览</a>
+                            <a href="" class="layui-btn layui-btn-mini">编辑</a>
+                            <a href="" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+                        </td>
+                    </tr>
+                    <?php
+                }
+                ?>
                 <tbody id="content">
                 </tbody>
             </table>
@@ -39,22 +59,6 @@ $rs = $conn->query("select * from item where item_title='$title'");
         </div>
     </div>
 </div>
-<!--模板-->
-<script type="text/html" id="tpl">
-    {{# layui.each(d.list, function(index, item){ }}
-    <tr>
-        <td><input type="checkbox" lay-skin="primary"></td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.age }}</td>
-        <td>{{ item.createtime }}</td>
-        <td>
-            <a href="/detail-1" target="_blank" class="layui-btn layui-btn-normal layui-btn-mini">预览</a>
-            <a href="javascript:;" data-name="{{ item.name }}" data-opt="edit" class="layui-btn layui-btn-mini">编辑</a>
-            <a href="javascript:;" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
-        </td>
-    </tr>
-    {{# }); }}
-</script>
 <script type="text/javascript" src="plugins/layui/layui.js"></script>
 <script>
     layui.config({

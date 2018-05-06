@@ -82,13 +82,11 @@ if (@$_POST['button']){
 						<input type="text" name="title" id="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
 					</div>
 				</div>
-
-				<div class="layui-form-item layui-form-text">
+                <div class="layui-form-item layui-form-text">
 					<label class="layui-form-label">编辑器</label>
 					<div class="layui-input-block">
                         <!-- 加载编辑器的容器 -->
                         <script id="container" name="content" type="text/plain">
-                            这里写你的初始化内容
                         </script>
 					</div>
 				</div>

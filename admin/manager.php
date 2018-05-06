@@ -1,9 +1,5 @@
 ﻿<?php
 require_once ("conn.php");
-if ($_POST){
-    echo $_POST['select'];
-    $var = $_POST['select'];
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +17,7 @@ if ($_POST){
        <div class="admin-main">
            <fieldset class="layui-elem-field layui-field-title">
                <legend>选择查看栏目</legend>
-           <form class="layui-form" style="margin-top: 25px" method="post">
+           <form class="layui-form" style="margin-top: 25px" method="get" action="manager_1.php">
                <div class="layui-form-item">
                    <label class="layui-form-label">栏目选择</label>
                    <div class="layui-input-inline">
@@ -41,8 +37,8 @@ if ($_POST){
                                <option value="友情链接">友情链接</option>
                        </select>
                    </div>
-<!--                   <input name="button" value="查找" type="submit" class="layui-btn">-->
-                   <a href="manager_1.php?title=".$var class="layui-btn">查找</a>
+                   <input value="查找" type="submit" class="layui-btn">
+<!--                   <a href="--><?php //echo "manager_1.php?title=".$var?><!--" class="layui-btn">查找</a>-->
                </div>
            </form>
            </fieldset>
