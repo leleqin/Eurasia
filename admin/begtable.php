@@ -4,7 +4,9 @@ $rs = $conn->query("select * from users");
 if ($_POST['button']){
     $user_name = $_POST['username'];
     $user_pwd = $_POST['password'];
-    $stam = $conn->query("insert into users(user_name,user_pwd) values('$user_name','$user_pwd');");
+    $info = $_POST['info'];
+    $stam = $conn->query("insert into users(user_name,user_pwd,info) values('$user_name','$user_pwd','$info');");
+    header("location:begtable.php");
 }
 ?>
 <!DOCTYPE html>
@@ -21,7 +23,7 @@ if ($_POST['button']){
 	</head>
 
 	<body>
-		<div style="margin: 15px;">
+        <div style="margin: 15px;">
 			<!-- 添加管理员 -->
 			<fieldset class="layui-elem-field">
 				<legend>添加管理员</legend>
@@ -45,6 +47,12 @@ if ($_POST['button']){
 					<input type="password" name="password" lay-verify="pass" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
 				</div>
 			</div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">请填写备注</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="info" lay-verify="title" placeholder="请填写备注" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
 			<div class="layui-form-item">
 				<div class="layui-input-block">
                     <input  class="layui-btn" type="submit" name="button" value="立即提交" />
@@ -70,7 +78,8 @@ if ($_POST['button']){
 					</tr>
 					</thead>
 					<?php
-                while ($row = mysqli_fetch_assoc($rs)) {
+                        while ($row = mysqli_fetch_assoc($rs)) {
+                        $user_id = $row['user_id'];
                     ?>
 					<tr>
 						<th><?php echo $row['user_name']?></th>
@@ -78,7 +87,7 @@ if ($_POST['button']){
 						<th><?php echo $row['info']?></th>
 						<td>
 							<a href="" class="layui-btn layui-btn-mini">编辑</a>
-							<a href="" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+							<a href="<?php echo "deleteUser.php?id=".$user_id ?>" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
 						</td>
 					</tr>
 					<?php
