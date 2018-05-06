@@ -1,3 +1,12 @@
+<?php
+require_once ("conn.php");
+$rs = $conn->query("select * from users");
+if ($_POST['button']){
+    $user_name = $_POST['username'];
+    $user_pwd = $_POST['password'];
+    $stam = $conn->query("insert into users(user_name,user_pwd) values('$user_name','$user_pwd');");
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -17,11 +26,11 @@
 			<fieldset class="layui-elem-field">
 				<legend>添加管理员</legend>
 				<div class="layui-field-box layui-form">
-			<form class="layui-form" action="" >
+			<form class="layui-form" action="" method="post">
 			<div class="layui-form-item">
 				<label class="layui-form-label">输入用户名</label>
 				<div class="layui-input-inline">
-					<input type="text" name="password" lay-verify="title" placeholder="请填写用户名" autocomplete="off" class="layui-input">
+					<input type="text" name="username" lay-verify="title" placeholder="请填写用户名" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 			<div class="layui-form-item">
@@ -38,7 +47,7 @@
 			</div>
 			<div class="layui-form-item">
 				<div class="layui-input-block">
-					<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <input  class="layui-btn" type="submit" name="button" value="立即提交" />
 					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 				</div>
 			</div>
@@ -50,9 +59,35 @@
 			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
 				<legend>已有管理员</legend>
 			</fieldset>
-				<div class="layui-field-box">
-					<div id="xx" style=" width: 1024px; height: 450px; ; border: 1px solid #DDDDDD;"></div>
-				</div>
+			<div class="layui-field-box layui-form">
+				<table class="layui-table admin-table">
+					<thead>
+					<tr>
+						<th>管理员账号</th>
+                        <th>创建日期</th>
+						<th>备注</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<?php
+                while ($row = mysqli_fetch_assoc($rs)) {
+                    ?>
+					<tr>
+						<th><?php echo $row['user_name']?></th>
+						<th><?php echo $row['user_date']?></th>
+						<th><?php echo $row['info']?></th>
+						<td>
+							<a href="" class="layui-btn layui-btn-mini">编辑</a>
+							<a href="" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+						</td>
+					</tr>
+					<?php
+                }
+                ?>
+					<tbody id="content">
+					</tbody>
+				</table>
+			</div>
 
 		</div>
 		<script type="text/javascript" src="plugins/layui/layui.js"></script>
