@@ -33,7 +33,7 @@ if (@$_POST['button']){
 			<form class="layui-form" action="" method="post">
 				<div class="layui-form-item">
 					<label class="layui-form-label">栏目选择</label>
-					<div class="layui-input-inline">
+					<div class="layui-input-inline" style="z-index: 9999;">
 						<select name="quiz">
 							<option value="">请选择要添加栏目</option>
 							<optgroup label="中心简介">
@@ -86,7 +86,10 @@ if (@$_POST['button']){
 				<div class="layui-form-item layui-form-text">
 					<label class="layui-form-label">编辑器</label>
 					<div class="layui-input-block">
-						<textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+                        <!-- 加载编辑器的容器 -->
+                        <script id="container" name="content" type="text/plain">
+                            这里写你的初始化内容
+                        </script>
 					</div>
 				</div>
 				<div class="layui-form-item">
@@ -99,6 +102,10 @@ if (@$_POST['button']){
 
 		</div>
 		<script type="text/javascript" src="plugins/layui/layui.js"></script>
+        <!-- 配置文件 -->
+        <script type="text/javascript" src="ueditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script type="text/javascript" src="ueditor.all.js"></script>
 		<script>
 			layui.use(['form', 'layedit', 'laydate'], function() {
 				var form = layui.form(),
@@ -107,7 +114,7 @@ if (@$_POST['button']){
 					laydate = layui.laydate;
 
 				//创建一个编辑器
-				var editIndex = layedit.build('LAY_demo_editor');
+                var ue = UE.getEditor('container');
 				//自定义验证规则
 				form.verify({
 					title: function(value) {

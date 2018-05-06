@@ -30,7 +30,7 @@ var navs = [{
     },{
         "title": "栏目管理",
         "icon": "&#xe630;",
-        "href": "manager.html"
+        "href": "manager.php"
     }]
 }, {
 	"title": "地址本",
