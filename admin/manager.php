@@ -1,9 +1,8 @@
 ﻿<?php
 require_once ("conn.php");
-if (isset($_POST['button'])) {
+if ($_POST){
     echo $_POST['select'];
-    $item_name = $_POST['select'];
-    $rs = $conn->query("select * from item where item_name = '$item_name'");
+    $var = $_POST['select'];
 }
 ?>
 <!DOCTYPE html>
@@ -42,67 +41,12 @@ if (isset($_POST['button'])) {
                                <option value="友情链接">友情链接</option>
                        </select>
                    </div>
-                   <input name="button" value="查找" type="submit" class="layui-btn">
+<!--                   <input name="button" value="查找" type="submit" class="layui-btn">-->
+                   <a href="manager_1.php?title=".$var class="layui-btn">查找</a>
                </div>
            </form>
            </fieldset>
-           <blockquote class="layui-elem-quote">
-               <a href="add.php" class="layui-btn layui-btn-small" id="add">
-                   <i class="layui-icon">&#xe608;</i> 添加信息
-               </a>
-               <a href="#" class="layui-btn layui-btn-small" id="import">
-                   <i class="layui-icon">&#xe608;</i> 导入信息
-               </a>
-               <a href="#" class="layui-btn layui-btn-small">
-                   <i class="fa fa-shopping-cart" aria-hidden="true"></i> 导出信息
-               </a>
-               <a href="#" class="layui-btn layui-btn-small" id="getSelected">
-                   <i class="fa fa-shopping-cart" aria-hidden="true"></i> 获取全选信息
-               </a>
-               <a href="javascript:;" class="layui-btn layui-btn-small" id="search">
-                   <i class="layui-icon">&#xe615;</i> 搜索
-               </a>
-           </blockquote>
-           <fieldset class="layui-elem-field">
-               <legend>数据列表</legend>
-               <div class="layui-field-box layui-form">
-                   <table class="layui-table admin-table">
-                       <thead>
-                       <tr>
-                           <th style="width: 30px;"><input type="checkbox" lay-filter="allselector" lay-skin="primary"></th>
-                           <th>序号</th>
-                           <th>栏目名称</th>
-                           <th>发表人</th>
-                           <th>发表时间</th>
-                       </tr>
-                       <?php
-                       while ($row = mysqli_fetch_assoc($rs)) {
-                           ?>
-                           <tr>
-                               <th><?php echo $row['$item_Id'] ?></th>
-                               <th><?php echo $row['$item_title'] ?></th>
-                               <th><?php echo $row['$item_user'] ?></th>
-                               <th><?php echo $row['$item_time'] ?></th>
-                               <td>
-                                   <a href="/detail-1" target="_blank" class="layui-btn layui-btn-normal layui-btn-mini">预览</a>
-                                   <a href="javascript:;" data-name="{{ item.name }}" data-opt="edit" class="layui-btn layui-btn-mini">编辑</a>
-                                   <a href="del.php?id=<?php echo $row['$item_Id']?>" onclick="return confirm('确认要删除吗？');" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
-                               </td>
-                           </tr>
-                               <?php
-                               }
-                               ?>
-                       <tbody id="content">
-						</tbody>
-					</table>
-				</div>
-			</fieldset>
-			<div class="admin-table-page">
-				<div id="paged" class="page">
-				</div>
-			</div>
-		</div>
-
+       </div>
 		<script type="text/javascript" src="plugins/layui/layui.js"></script>
 		<script>
 			layui.config({
