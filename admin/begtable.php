@@ -86,7 +86,7 @@ if ($_POST['button']){
 						<th><?php echo $row['user_date']?></th>
 						<th><?php echo $row['info']?></th>
 						<td>
-							<a href="" class="layui-btn layui-btn-mini">编辑</a>
+							<a href="<?php echo "editUser.php?id=".$user_id?>" class="layui-btn layui-btn-mini">编辑</a>
 							<a href="<?php echo "deleteUser.php?id=".$user_id ?>" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
 						</td>
 					</tr>
@@ -125,51 +125,6 @@ if ($_POST['button']){
 						}
 					}
 				});
-
-				var columns = [{
-					title: '用户名',
-					field: 'name'
-				}, {
-					title: '年龄',
-					field: 'age'
-				}, {
-					title: '是否启用',
-					field: 'isEnable',
-					format: function(value) {
-
-					}
-				}, {
-					title: '性别',
-					field: 'sex'
-				}, {
-					title: '备注',
-					field: 'remarks'
-				}];
-				var data = [{
-					name: '张三',
-					age: 19,
-					sex: '男',
-					isEnable: true,
-					remarks: 'aaa'
-				}, {
-					name: '李四',
-					age: 21,
-					sex: '男',
-					isEnable: false,
-					remarks: 'bbb'
-				}, {
-					name: '王小丽',
-					age: 29,
-					sex: '女',
-					isEnable: true,
-					remarks: 'ccc'
-				}, {
-					name: 'f赵六',
-					age: 15,
-					sex: '男',
-					isEnable: true,
-					remarks: 'ddd'
-				}];
 				begtable.set({
 					bordered: true,
 					hovered: true,
