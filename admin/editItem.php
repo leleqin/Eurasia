@@ -1,5 +1,9 @@
 <?php
 require_once "conn.php";
+$id = $_GET['id'];
+
+$rs = $conn->query("select * from item where item_Id = '$id'");
+
 if (@$_POST['button']){
     $item_name = $_POST['quiz'];
     $item_title = $_POST['title'];
@@ -12,8 +16,8 @@ if (@$_POST['button']){
 <html>
 
 	<head>
-		<meta charset="utf-8">
-		<title>新增项目</title>
+        <meta charset="utf-8">
+		<title>修改项目</title>
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -27,76 +31,84 @@ if (@$_POST['button']){
 	<body>
 		<div style="margin: 15px;">
 			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-				<legend>栏目选择</legend>
+				<legend>栏目修改</legend>
 			</fieldset>
-
 			<form class="layui-form" action="" method="post">
-				<div class="layui-form-item">
-					<label class="layui-form-label">栏目选择</label>
-					<div class="layui-input-inline" style="z-index: 9999;">
-						<select name="quiz">
-							<option value="">请选择要添加栏目</option>
-							<optgroup label="中心简介">
-								<option value="中心简介">新增简介</option>
-							</optgroup>
-							<optgroup label="中心负责人">
-								<option value="中心负责人">新增负责人</option>
-							</optgroup>
-                            <optgroup label="申报书">
-                                <option value="申报书">新增申报书</option>
-                            </optgroup>
-                            <optgroup label="教学成果">
-                                <option value="教学成果">新增教学成本</option>
-                            </optgroup>
-                            <optgroup label="政策制度">
-                                <option value="政策制度">新增政策制度</option>
-                            </optgroup>
-                            <optgroup label="中心视频">
-                                <option value="中心视频">新增中心视频</option>
-                            </optgroup>
-                            <optgroup label="典型案例">
-                                <option value="典型案例">新增典型案例</option>
-                            </optgroup>
-                            <optgroup label="典型教材">
-                                <option value="典型教材">新增典型教材</option>
-                            </optgroup>
-                            <optgroup label="典型课件">
-                                <option value="典型课件">新增典型课件</option>
-                            </optgroup>
-                            <optgroup label="产学合作">
-                                <option value="产学合作">新增产学合作</option>
-                            </optgroup>
-                            <optgroup label="新闻管理">
-                                <option value="资讯">新增新闻</option>
-                            </optgroup>
-                            <optgroup label="友情链接">
-                                <option value="友情链接">新增友情链接</option>
-                            </optgroup>
-						</select>
-					</div>
-				</div>
+                <?php
+                while ($row = mysqli_fetch_row($rs)) {
+                    ?>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">栏目选择</label>
+                        <div class="layui-input-inline" style="z-index: 9999;">
 
-				<div class="layui-form-item">
-					<label class="layui-form-label">单行输入框</label>
-					<div class="layui-input-block">
-						<input type="text" name="title" id="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
-					</div>
-				</div>
-                <div class="layui-form-item layui-form-text">
-					<label class="layui-form-label">编辑器</label>
-					<div class="layui-input-block">
-                        <!-- 加载编辑器的容器 -->
-                        <script id="container" name="content" type="text/plain">
-                        </script>
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<div class="layui-input-block">
-                        <input  class="layui-btn" type="submit" name="button" value="立即提交" />
-						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
-					</div>
-				</div>
+                            <select name="quiz">
+                                <option value="">栏目选择</option>
+                                <optgroup label="中心简介">
+                                    <option value="中心简介">新增简介</option>
+                                </optgroup>
+                                <optgroup label="中心负责人">
+                                    <option value="中心负责人">新增负责人</option>
+                                </optgroup>
+                                <optgroup label="申报书">
+                                    <option value="申报书">新增申报书</option>
+                                </optgroup>
+                                <optgroup label="教学成果">
+                                    <option value="教学成果">新增教学成本</option>
+                                </optgroup>
+                                <optgroup label="政策制度">
+                                    <option value="政策制度">新增政策制度</option>
+                                </optgroup>
+                                <optgroup label="中心视频">
+                                    <option value="中心视频">新增中心视频</option>
+                                </optgroup>
+                                <optgroup label="典型案例">
+                                    <option value="典型案例">新增典型案例</option>
+                                </optgroup>
+                                <optgroup label="典型教材">
+                                    <option value="典型教材">新增典型教材</option>
+                                </optgroup>
+                                <optgroup label="典型课件">
+                                    <option value="典型课件">新增典型课件</option>
+                                </optgroup>
+                                <optgroup label="产学合作">
+                                    <option value="产学合作">新增产学合作</option>
+                                </optgroup>
+                                <optgroup label="新闻管理">
+                                    <option value="资讯">新增新闻</option>
+                                </optgroup>
+                                <optgroup label="友情链接">
+                                    <option value="友情链接">新增友情链接</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">单行输入框</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" id="title" lay-verify="title" autocomplete="off"
+                                   class="layui-input" value="<?php echo $row['$item_title']?>">
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">编辑器</label>
+                        <div class="layui-input-block">
+                            <!-- 加载编辑器的容器 -->
+                            <script id="container" name="content" type="text/plain">
+                            </script>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input class="layui-btn" type="submit" name="button" value="保存"/>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
 			</form>
+
 
 		</div>
 		<script type="text/javascript" src="plugins/layui/layui.js"></script>

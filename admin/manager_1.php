@@ -43,8 +43,8 @@ $rs = $conn->query("select * from item where item_name='$title'");
                         <th><?php echo $row['item_time']?></th>
                         <td>
                             <a href="" target="_blank" class="layui-btn layui-btn-normal layui-btn-mini">预览</a>
-                            <a href="" class="layui-btn layui-btn-mini">编辑</a>
-                            <a href="<?php echo "deleteManager.php?item_id=".$id?>" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+                            <a href="<?php echo "editItem.php?id=".$id ?>" class="layui-btn layui-btn-mini">编辑</a>
+                            <a href="<?php echo "deleteManager.php?item_id=".$id ?>" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
                         </td>
                     </tr>
                     <?php

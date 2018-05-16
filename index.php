@@ -10,7 +10,7 @@ $rs = $conn->query("select * from item");
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>金融实验咨询</title>
+		<title>金融实验室</title>
 		<!-- Bootstrap Core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom Fonts -->
@@ -41,13 +41,12 @@ $rs = $conn->query("select * from item");
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right custom-menu">
 						<li class="active"><a href="#home">首页</a></li>
-						<li><a href="center.php">中心简介</a></li>
-						<li><a href="#services">申报书</a></li>
+						<li><a href="#about">中心简介</a></li>
+						<li><a href="#services">典型案例</a></li>
+                        <li><a href="#bloghome">负责人</a></li>
 						<li><a href="#meet-team">实验室资讯</a></li>
-						<li><a href="#portfolio1">政策制度</a></li>
-						<li><a href="#contact">典型案例</a></li>
-						<li><a href="blog.html">产学合作</a></li>
-						<li><a href="single-post.html">典型课件</a></li>
+						<li><a href="#portfolio1">实验室展</a></li>
+						<li><a href="#contact">申报书</a></li>
 					</ul>
 				</div>
 			</div>
@@ -201,30 +200,38 @@ $rs = $conn->query("select * from item");
 			</div>
 		</section>
 
-		<section id="bloghome">
-			<div class="container">
-				<div class="text-center"><h2>中心负责人</h2>
-					<img class="img-responsive displayed" src="images/short.png" alt="about">
-				</div>
-				<div class="row">
-					<div class="col-md-12 homeport1">
-						<div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
-							<figure class="effect-oscar">
-								<img src="images/blog2.jpg" alt="img09" class="img-responsive"/>
-								<figcaption>
-									<h2>Blog Post Long Title</h2>
-									<a href="#">View more</a>
-								</figcaption>           
-							</figure>
-						</div>
-						<div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
-							<p class="text-center">关宏，男，副教授，陕西省金融学会委员，西安市反假货币、反洗钱培训基地讲师。原任职于西安石油大学计算机学院，现任全国高等院校计算机教育研究会理事、陕西省计算机教育学会秘书长，从事金融学相关教学与科研工作10多年，发表学术论文30余篇，主编或独著经济类教材10余部，主持各类科研教改项目10多项，获厅（校）级及以上奖励6多项，现为我院金融系主任，专家委员会成员。</p>
-							<div class="text-center"><a class="btn btn-primary btn-noborder-radius hvr-bounce-to-bottom" href="">Read More</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <section id="bloghome">
+            <div class="container">
+                <div class="text-center"><h2>中心负责人</h2>
+                    <img class="img-responsive displayed" src="images/short.png" alt="about">
+                </div>
+                <div class="row">
+                    <div class="col-md-12 homeport1">
+                        <div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
+                            <figure class="effect-oscar">
+                                <img src="images/blog1.jpg" alt="img09" class="img-responsive" />
+                                <figcaption>
+                                    <h2>Blog Post Long Title</h2>
+                                    <a href="#">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
+                            <figure class="effect-oscar">
+                            </figure>
+                            <p class="text-center">关宏，男，副教授，陕西省金融学会委员，西安市反假货币、反洗钱培训基地讲师。原任职于西安石油大学计算机学院，现任全国高等院校计算机教育研究会理事、陕西省计算机教育学会秘书长，从事金融学相关教学与科研工作10多年，发表学术论文30余篇，主编或独著经济类教材10余部，主持各类科研教改项目10多项，获厅（校）级及以上奖励6多项，现为我院金融系主任，专家委员会成员。</p>
+                            <div class="text-center"><a class="btn btn-primary btn-noborder-radius hvr-bounce-to-bottom">Read More</a></div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
+                            <figure class="effect-oscar">
+                                <figcaption>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 		<section id="meet-team">
 			<div class="container">
@@ -348,11 +355,11 @@ $rs = $conn->query("select * from item");
 		</div>
 		</section>
 
-		<div id="location">
-			<div class="row prodmap">
-				<div id="map-canvas-holder" class="map_holder" style="height: 400px;"></div>
-			</div>
-		</div>
+        <div id="location">
+            <div class="row prodmap">
+                <div id="map-canvas-holder" class="map_holder" style="height: 40px;"></div>
+            </div>
+        </div>
 
 		<section id="contact">
 			<div class="container"> 
