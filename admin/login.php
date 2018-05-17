@@ -54,6 +54,7 @@
             $ = layui.jquery,
             form = layui.form();
 
+        //监听
     form.on('submit(submitDemo)',function () {
         $.ajax({
             type:"post",
@@ -77,7 +78,6 @@
             }
         });
     });
-
     });
 </script>
 </body>
