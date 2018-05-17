@@ -936,8 +936,8 @@ a cite {
 }
 
 .layui-form-onswitch {
-    border-color: #5FB878;
-    background-color: #5FB878
+    border-color: #00ada0;
+    background-color: #00ada0
 }
 
 .layui-form-onswitch i {
@@ -982,7 +982,7 @@ a cite {
 }
 
 .layui-form-radio i:hover, .layui-form-radioed i {
-    color: #5FB878
+    color: #00ada0
 }
 
 .layui-radio-disbaled i {
@@ -1242,7 +1242,7 @@ a cite {
 }
 
 .layui-upload-button:active {
-    border: 1px solid #4CAF50;
+    border: 1px solid #00ada0;
     color: #000
 }
 
@@ -1272,7 +1272,7 @@ a cite {
     margin-right: 5px;
     vertical-align: top;
     font-size: 20px;
-    color: #5FB878
+    color: #00ada0
 }
 
 .layui-upload-iframe {
@@ -1550,7 +1550,7 @@ a cite {
     top: 0;
     width: 0;
     height: 5px;
-    background-color: #5FB878;
+    background-color: #00ada0;
     transition: all .2s;
     -webkit-transition: all .2s
 }
