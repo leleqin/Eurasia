@@ -9,7 +9,7 @@ if ($_POST['button']) {
     $user_pwd = $_POST['password'];
     $info = $_POST['info'];
     $stam = $conn->query("update users set user_name = '$user_name',user_pwd = '$user_pwd',info = '$info' where user_id = '$id'");
-    header("location:begtable.php");
+    header("location:userManager.php");
 }
 ?>
 <!DOCTYPE html>

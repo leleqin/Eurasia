@@ -5,7 +5,7 @@ var navs = [{
 	"children": [{
 		"title": "管理员管理",
 		"icon": "&#xe613;",
-		"href": "begtable.php"
+		"href": "userManager.php"
         }, {
 		"title": "网站配置",
 		"icon": "&#xe641;",

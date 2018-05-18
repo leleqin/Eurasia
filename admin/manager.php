@@ -81,7 +81,7 @@
         form.on('select(selectDemo)', function (data) {
             $.ajax({
                 type: "post",
-                url: "show.php",
+                url: "managerSelect.php",
                 data: {title: data.value},
                 dateType: "json",
                 success: function (msg) {
@@ -114,8 +114,6 @@
             });
             layer.close(index);
         })
-
-
     }
 </script>
 </body>

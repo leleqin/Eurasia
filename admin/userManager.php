@@ -1,12 +1,12 @@
 <?php
-require_once ("conn.php");
+require_once("conn.php");
 $rs = $conn->query("select * from users");
 if ($_POST['button']){
     $user_name = $_POST['username'];
     $user_pwd = $_POST['password'];
     $info = $_POST['info'];
     $stam = $conn->query("insert into users(user_name,user_pwd,info) values('$user_name','$user_pwd','$info');");
-    header("location:begtable.php");
+    header("location:userManager.php");
 }
 ?>
 <!DOCTYPE html>
@@ -86,8 +86,8 @@ if ($_POST['button']){
 						<th><?php echo $row['user_date']?></th>
 						<th><?php echo $row['info']?></th>
 						<td>
-							<a href="<?php echo "editUser.php?id=".$user_id?>" class="layui-btn layui-btn-mini">编辑</a>
-							<a href="<?php echo "deleteUser.php?id=".$user_id ?>" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+							<button type="button" href="<?php echo "editUser.php?id=".$user_id?>" class="layui-btn layui-btn-mini">编辑</button>
+							<button type="button" href="<?php echo "deleteUser.php?id=".$user_id ?>" class="layui-btn layui-btn-danger layui-btn-mini">删除</button>
 						</td>
 					</tr>
 					<?php
