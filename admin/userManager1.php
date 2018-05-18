@@ -9,6 +9,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
 		<link rel="stylesheet" href="css/begtable.css" />
+        <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/table.css"/>
         <script src="../js/jquery.js"></script>
 	</head>
 
@@ -22,30 +24,30 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">输入用户名</label>
 				<div class="layui-input-inline">
-					<input type="text" name="username" lay-verify="title" placeholder="请填写用户名" autocomplete="off" class="layui-input">
+					<input type="text" id="username" lay-verify="username" placeholder="请填写用户名" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">请输入密码</label>
 				<div class="layui-input-inline">
-					<input type="password" name="password" lay-verify="pass" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
+					<input type="password" id="password" lay-verify="pass" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">请再次输入</label>
 				<div class="layui-input-inline">
-					<input type="password" name="password" lay-verify="pass" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
+					<input type="password" id="password" lay-verify="password" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
 				</div>
 			</div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">请填写备注</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="info" lay-verify="title" placeholder="请填写备注" autocomplete="off" class="layui-input">
+                        <input type="text" id="info" lay-verify="info" placeholder="请填写备注" autocomplete="off" class="layui-input">
                     </div>
                 </div>
 			<div class="layui-form-item">
 				<div class="layui-input-block">
-                    <input  class="layui-btn" type="submit" name="button" value="立即提交" />
+                    <button class="layui-btn" lay-submit="" lay-filter="addUser">立即提交</button>
 					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 				</div>
 			</div>
@@ -80,12 +82,12 @@
 				base: 'js/'
 			});
 
-			layui.use('begtable', function() {
-				var begtable = layui.begtable(),
+			layui.use(['begtable','form'], function() {
+				var $ = layui.jquery,
 					layer = layui.layer,
-					$ = layui.jquery,
-					laypage = layui.laypage;
+                    form = layui.form();
 
+				//显示所有管理员
 				$(document).ready(function () {
                     $.ajax({
                         type:"post",
@@ -107,8 +109,28 @@
                     })
                 })
 
+                //监听添加管理员
+                form.on('submit(addUser)',function () {
+
+                    $.ajax({
+                        type:"post",
+                        url:"userAdd.php",
+                        data:{username:$("#username").val(),password:$("#password").val(),info:$("#info").val()},
+                        dataType:"text",
+                        success:function (msg) {
+                            if (msg === "ok"){
+                                layer.msg('添加成功',{icon:6,time:500},function () {
+                                    location.reload();
+                                });
+                            }
+                        }
+                    })
+                })
+
+
 			});
 
+			//删除管理员
             function deleteUser(id) {
                 layer.confirm("是否删除？", {icon: 3, title: '删除'}, function (index) {
                     $.ajax({

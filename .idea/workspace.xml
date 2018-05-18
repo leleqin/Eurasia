@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63f22b24-9bd5-49ed-9fa4-b33ac8dd303f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/userManager1.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/admin/userSelect.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/admin/userAdd.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/README.md" afterPath="$PROJECT_DIR$/admin/README.md" />
-      <change beforePath="$PROJECT_DIR$/admin/begtable.php" afterPath="$PROJECT_DIR$/admin/userManager.php" />
-      <change beforePath="$PROJECT_DIR$/admin/checkLogin.php" afterPath="$PROJECT_DIR$/admin/checkLogin.php" />
-      <change beforePath="$PROJECT_DIR$/admin/conn.php" afterPath="$PROJECT_DIR$/admin/conn.php" />
-      <change beforePath="$PROJECT_DIR$/admin/datas/nav.js" afterPath="$PROJECT_DIR$/admin/datas/nav.js" />
-      <change beforePath="$PROJECT_DIR$/admin/deleteManager.php" afterPath="$PROJECT_DIR$/admin/deleteManager.php" />
-      <change beforePath="$PROJECT_DIR$/admin/deleteUser.php" afterPath="$PROJECT_DIR$/admin/deleteUser.php" />
-      <change beforePath="$PROJECT_DIR$/admin/editUser.php" afterPath="$PROJECT_DIR$/admin/editUser.php" />
-      <change beforePath="$PROJECT_DIR$/admin/manager.php" afterPath="$PROJECT_DIR$/admin/manager.php" />
-      <change beforePath="$PROJECT_DIR$/admin/manager_1.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/admin/show.php" afterPath="$PROJECT_DIR$/admin/managerSelect.php" />
+      <change beforePath="$PROJECT_DIR$/admin/userManager1.php" afterPath="$PROJECT_DIR$/admin/userManager1.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,22 +53,48 @@
       <file leaf-file-name="userManager1.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/userManager1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
+            <state relative-caret-position="1026">
+              <caret line="38" column="55" lean-forward="true" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="156">
-                <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="userAdd.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/userAdd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+              <folding>
+                <marker date="1526640492753" expanded="true" signature="129:213" ph="INSERT into users... " />
+                <marker date="1526640492753" expanded="true" signature="135:193" ph="insert into users... " />
+                <marker date="1526640492753" expanded="true" signature="135:213" ph="insert into users... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+              <folding>
+                <marker date="1526558517119" expanded="true" signature="2814:2833" ph="..." />
+                <marker date="1526558517119" expanded="true" signature="2814:2848" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkLogin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/checkLogin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding>
+                <marker date="1526628827197" expanded="true" signature="146:213" ph="select * fro... users" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,6 +123,7 @@
       <find>thead</find>
       <find>0</find>
       <find>aa</find>
+      <find>userName</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,8 +180,9 @@
         <option value="$PROJECT_DIR$/admin/userSelect.php" />
         <option value="$PROJECT_DIR$/admin/manager.php" />
         <option value="$PROJECT_DIR$/admin/deleteUser.php" />
-        <option value="$PROJECT_DIR$/admin/userManager1.php" />
         <option value="$PROJECT_DIR$/admin/README.md" />
+        <option value="$PROJECT_DIR$/admin/userAdd.php" />
+        <option value="$PROJECT_DIR$/admin/userManager1.php" />
       </list>
     </option>
   </component>
@@ -282,12 +299,12 @@
       <workItem from="1526430519881" duration="11560000" />
       <workItem from="1526455350637" duration="19412000" />
       <workItem from="1526536425269" duration="19658000" />
-      <workItem from="1526620378160" duration="13273000" />
+      <workItem from="1526620378160" duration="18563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200231000" />
+    <option name="totallyTimeSpent" value="205521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -302,7 +319,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38836265" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38836265" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -326,8 +343,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/UEditor/index.html" />
-    <entry file="file://$PROJECT_DIR$/admin/ceshi.php" />
     <entry file="file://$PROJECT_DIR$/admin/UEditor/demo.php" />
     <entry file="file://$PROJECT_DIR$/admin/ueditor.all.min.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -503,6 +518,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="224" column="21" lean-forward="true" selection-start-line="224" selection-start-column="21" selection-end-line="224" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -518,16 +534,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding>
-            <marker date="1525605268287" expanded="true" signature="175:283" ph="INSERT INTO item... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -582,27 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/checkLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding>
-            <marker date="1526628827197" expanded="true" signature="146:213" ph="select * fro... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <marker date="1526558517119" expanded="true" signature="2814:2833" ph="..." />
-            <marker date="1526558517119" expanded="true" signature="2814:2848" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/userManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1647">
@@ -624,13 +609,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/managerSelect.php">
+    <entry file="file://$PROJECT_DIR$/admin/deleteUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="81">
+          <caret line="3" column="63" lean-forward="true" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
           <folding>
-            <marker date="1526631172289" expanded="true" signature="114:157" ph="SELECT * FRO... item" />
+            <marker date="1526633596200" expanded="true" signature="73:112" ph="delete from users... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="156">
+            <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/manager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1161">
+          <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="221" column="44" lean-forward="false" selection-start-line="221" selection-start-column="44" selection-end-line="221" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -644,40 +656,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/deleteUser.php">
+    <entry file="file://$PROJECT_DIR$/admin/managerSelect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="63" lean-forward="true" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+        <state relative-caret-position="108">
+          <caret line="4" column="53" lean-forward="true" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
           <folding>
-            <marker date="1526633596200" expanded="true" signature="73:112" ph="delete from users... " />
+            <marker date="1526631172289" expanded="true" signature="114:157" ph="SELECT * FRO... item" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/manager.php">
+    <entry file="file://$PROJECT_DIR$/admin/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="189">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding>
+            <marker date="1525605268287" expanded="true" signature="175:283" ph="INSERT INTO item... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/checkLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <marker date="1526628827197" expanded="true" signature="146:213" ph="select * fro... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+          <folding>
+            <marker date="1526558517119" expanded="true" signature="2814:2833" ph="..." />
+            <marker date="1526558517119" expanded="true" signature="2814:2848" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/userManager1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
+        <state relative-caret-position="1026">
+          <caret line="38" column="55" lean-forward="true" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="156">
-            <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/admin/userAdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <marker date="1526640492753" expanded="true" signature="129:213" ph="INSERT into users... " />
+            <marker date="1526640492753" expanded="true" signature="135:193" ph="insert into users... " />
+            <marker date="1526640492753" expanded="true" signature="135:213" ph="insert into users... " />
+          </folding>
         </state>
       </provider>
     </entry>
