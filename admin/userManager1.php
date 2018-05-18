@@ -30,13 +30,13 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">请输入密码</label>
 				<div class="layui-input-inline">
-					<input type="password" id="password" lay-verify="pass" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
+					<input type="password" id="password" lay-verify="pass_one" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">请再次输入</label>
 				<div class="layui-input-inline">
-					<input type="password" id="password" lay-verify="password" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
+					<input type="password" id="passwordAgain" lay-verify="pass_two" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
 				</div>
 			</div>
                 <div class="layui-form-item">
@@ -109,9 +109,18 @@
                     })
                 })
 
+                //密码验证
+                form.verify({
+                    pass_one:[/^[\S]{6,12}$/,'密码必须6到12位，且不能出现空格'],
+                    pass_two:function (value) {
+                        if (value != $("#password").val()){
+                            return '两次密码不一致';
+                        }
+                    }
+                });
+
                 //监听添加管理员
                 form.on('submit(addUser)',function () {
-
                     $.ajax({
                         type:"post",
                         url:"userAdd.php",
