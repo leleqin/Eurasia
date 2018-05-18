@@ -43,7 +43,7 @@
     <fieldset class="layui-elem-field layui-field-title">
         <legend>数据列表</legend>
         <div class="layui-field-box layui-form">
-            <table class="layui-table admin-table">
+            <table class="layui-table admin-table" lay-filter="tableDemo">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -88,11 +88,11 @@
                     $("#aa").html("");//删除之前的数据
                     var str;
                     $.each(JSON.parse(msg), function (index, item) {
-                        str = "<tr><td>"+(index+1)+"</td><td>"+item['title']+"</td><td>"+item['user']+"</td><td>"+item['time']+
-                            "</td><td>"+
-                            "<a href=\"/detail-1\" target=\"_blank\" class=\"layui-btn layui-btn-normal layui-btn-mini\">预览</a>"+
-                            "<a href=\"javascript:;\" data-name=\"{{ item.name }}\" data-opt=\"edit\" class=\"layui-btn layui-btn-mini\">编辑</a>"+
-                            "<a href=\"javascript:;\" data-id=\"1\" data-opt=\"del\" class=\"layui-btn layui-btn-danger layui-btn-mini\">删除</a>"+
+                        str = "<tr><td>" + (index + 1) + "</td><td>" + item['title'] + "</td><td>" + item['user'] + "</td><td>" + item['time'] +
+                            "</td><td>" +
+                            "<a class=\"layui-btn layui-btn-normal layui-btn-mini\" lay-even='detail'>预览</a>" +
+                            "<a href=\"javascript:;\" data-name=\"{{ item.name }}\" data-opt=\"edit\" class=\"layui-btn layui-btn-mini\">编辑</a>" +
+                            "<a class=\"layui-btn layui-btn-danger layui-btn-mini\" onclick='deleteItem(" + item['id'] + ")'>删除</a>" +
                             "</td></tr>";
                         $("#aa").append(str);
                     });
@@ -101,6 +101,22 @@
         })
 
     })
+
+    function deleteItem(id) {
+        layer.confirm("是否删除？", {icon: 3, title: '删除'}, function (index) {
+            $.ajax({
+                type: "post",
+                url: "deleteManager.php",
+                data: {id: id},
+            });
+            layer.msg('删除成功', {icon: 6, time: 500}, function () {
+                location.reload();
+            });
+            layer.close(index);
+        })
+
+
+    }
 </script>
 </body>
 </html>

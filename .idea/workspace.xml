@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="63f22b24-9bd5-49ed-9fa4-b33ac8dd303f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/admin/README.md" afterPath="$PROJECT_DIR$/admin/README.md" />
-      <change beforePath="$PROJECT_DIR$/admin/login.php" afterPath="$PROJECT_DIR$/admin/login.php" />
+      <change beforePath="$PROJECT_DIR$/admin/deleteManager.php" afterPath="$PROJECT_DIR$/admin/deleteManager.php" />
+      <change beforePath="$PROJECT_DIR$/admin/deleteUser.php" afterPath="$PROJECT_DIR$/admin/deleteUser.php" />
+      <change beforePath="$PROJECT_DIR$/admin/index.html" afterPath="$PROJECT_DIR$/admin/index.html" />
+      <change beforePath="$PROJECT_DIR$/admin/manager.php" afterPath="$PROJECT_DIR$/admin/manager.php" />
+      <change beforePath="$PROJECT_DIR$/admin/show.php" afterPath="$PROJECT_DIR$/admin/show.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,19 +30,56 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="admin@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="admin@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="admin@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="admin: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="admin@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="admin: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="item: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/login.php">
+      <file leaf-file-name="manager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/manager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
+            <state relative-caret-position="428">
+              <caret line="111" column="49" lean-forward="false" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="26" column="61" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deleteUser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/deleteUser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
               <folding>
-                <marker date="1526558517119" expanded="true" signature="2814:2833" ph="..." />
-                <marker date="1526558517119" expanded="true" signature="2814:2848" ph="..." />
+                <marker date="1526627826142" expanded="true" signature="85:124" ph="delete from users... " />
               </folding>
             </state>
           </provider>
@@ -68,6 +108,7 @@
       <find>about</find>
       <find>thead</find>
       <find>0</find>
+      <find>aa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -98,7 +139,6 @@
         <option value="$PROJECT_DIR$/admin/button.html" />
         <option value="$PROJECT_DIR$/admin/add.php" />
         <option value="$PROJECT_DIR$/admin/begtable.html" />
-        <option value="$PROJECT_DIR$/admin/deleteUser.php" />
         <option value="$PROJECT_DIR$/admin/del.php" />
         <option value="$PROJECT_DIR$/admin/edit.php" />
         <option value="$PROJECT_DIR$/admin/table.html" />
@@ -107,7 +147,6 @@
         <option value="$PROJECT_DIR$/admin/manager_1.php" />
         <option value="$PROJECT_DIR$/admin/editItem.php" />
         <option value="$PROJECT_DIR$/admin/login.html" />
-        <option value="$PROJECT_DIR$/admin/index.html" />
         <option value="$PROJECT_DIR$/admin/logincheck.php" />
         <option value="$PROJECT_DIR$/css/patros.css" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -115,12 +154,15 @@
         <option value="$PROJECT_DIR$/admin/test.html" />
         <option value="$PROJECT_DIR$/admin/getsite_mysql.php" />
         <option value="$PROJECT_DIR$/admin/manager.html" />
-        <option value="$PROJECT_DIR$/admin/show.php" />
-        <option value="$PROJECT_DIR$/admin/manager.php" />
         <option value="$PROJECT_DIR$/admin/plugins/layui/css/layui.css" />
         <option value="$PROJECT_DIR$/admin/checkLogin.php" />
         <option value="$PROJECT_DIR$/admin/README.md" />
         <option value="$PROJECT_DIR$/admin/login.php" />
+        <option value="$PROJECT_DIR$/admin/show.php" />
+        <option value="$PROJECT_DIR$/admin/manager.php" />
+        <option value="$PROJECT_DIR$/admin/deleteManager.php" />
+        <option value="$PROJECT_DIR$/admin/deleteUser.php" />
+        <option value="$PROJECT_DIR$/admin/index.html" />
       </list>
     </option>
   </component>
@@ -169,8 +211,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,17 +277,19 @@
       <workItem from="1526344093727" duration="5745000" />
       <workItem from="1526430519881" duration="11560000" />
       <workItem from="1526455350637" duration="19412000" />
-      <workItem from="1526536425269" duration="19185000" />
+      <workItem from="1526536425269" duration="19658000" />
+      <workItem from="1526620378160" duration="7092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186485000" />
+    <option name="totallyTimeSpent" value="194050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15681234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15874036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -253,7 +297,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38836265" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38836265" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -318,13 +362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/auxiliar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-445">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/button.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1404">
@@ -336,13 +373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1836">
           <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/deleteUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -406,13 +436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="49" column="52" lean-forward="true" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/datas/nav.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
@@ -424,7 +447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -459,20 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/deleteManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2646">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4212">
@@ -492,13 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1431">
           <caret line="3" column="68" lean-forward="true" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/259ad591/9fbb452f-37a1-4777-9198-cc74b0949f27/admin.item">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -528,7 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="224" column="21" lean-forward="true" selection-start-line="224" selection-start-column="21" selection-end-line="224" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -536,20 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding>
-            <marker date="1525672086798" expanded="true" signature="71:111" ph="select * fro... item" />
-            <marker date="1525672086798" expanded="true" signature="260:368" ph="INSERT INTO item... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/show.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding>
-            <marker date="1526476678244" expanded="true" signature="114:157" ph="SELECT * FRO... item" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -561,21 +547,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/manager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1296">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/checkLogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <marker date="1526557897559" expanded="true" signature="147:214" ph="select * fro... users" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -590,14 +572,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/login.php">
+    <entry file="das://table:/259ad591/9fbb452f-37a1-4777-9198-cc74b0949f27/admin.item">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/deleteManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
+        <state relative-caret-position="27">
+          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
           <folding>
-            <marker date="1526558517119" expanded="true" signature="2814:2833" ph="..." />
-            <marker date="1526558517119" expanded="true" signature="2814:2848" ph="..." />
+            <marker date="1526627786224" expanded="true" signature="74:112" ph="delete from item... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding>
+            <marker date="1525605268287" expanded="true" signature="175:283" ph="INSERT INTO item... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/auxiliar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/deleteUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding>
+            <marker date="1526627826142" expanded="true" signature="85:124" ph="delete from users... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding>
+            <marker date="1526623068922" expanded="true" signature="114:157" ph="SELECT * FRO... item" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/manager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="111" column="49" lean-forward="false" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="26" column="61" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
