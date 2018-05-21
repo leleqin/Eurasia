@@ -72,6 +72,9 @@
                         btnAlign: 'c'
                     });
                 }
+                else if (msg === "ok"){
+                    window.location.href="index.html";
+                }
             },
             error:function () {
                 alert("失败")

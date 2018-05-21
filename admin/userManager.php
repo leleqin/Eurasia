@@ -1,14 +1,3 @@
-<?php
-require_once("conn.php");
-$rs = $conn->query("select * from users");
-if ($_POST['button']){
-    $user_name = $_POST['username'];
-    $user_pwd = $_POST['password'];
-    $info = $_POST['info'];
-    $stam = $conn->query("insert into users(user_name,user_pwd,info) values('$user_name','$user_pwd','$info');");
-    header("location:userManager.php");
-}
-?>
 <!DOCTYPE html>
 <html>
 
@@ -20,6 +9,9 @@ if ($_POST['button']){
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
 		<link rel="stylesheet" href="css/begtable.css" />
+        <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/table.css"/>
+        <script src="../js/jquery.js"></script>
 	</head>
 
 	<body>
@@ -32,30 +24,30 @@ if ($_POST['button']){
 			<div class="layui-form-item">
 				<label class="layui-form-label">输入用户名</label>
 				<div class="layui-input-inline">
-					<input type="text" name="username" lay-verify="title" placeholder="请填写用户名" autocomplete="off" class="layui-input">
+					<input type="text" id="username" lay-verify="username" placeholder="请填写用户名" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">请输入密码</label>
 				<div class="layui-input-inline">
-					<input type="password" name="password" lay-verify="pass" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
+					<input type="password" id="password" lay-verify="pass_one" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">请再次输入</label>
 				<div class="layui-input-inline">
-					<input type="password" name="password" lay-verify="pass" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
+					<input type="password" id="passwordAgain" lay-verify="pass_two" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
 				</div>
 			</div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">请填写备注</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="info" lay-verify="title" placeholder="请填写备注" autocomplete="off" class="layui-input">
+                        <input type="text" id="info" lay-verify="info" placeholder="请填写备注" autocomplete="off" class="layui-input">
                     </div>
                 </div>
 			<div class="layui-form-item">
 				<div class="layui-input-block">
-                    <input  class="layui-btn" type="submit" name="button" value="立即提交" />
+                    <button class="layui-btn" lay-submit="" lay-filter="addUser">立即提交</button>
 					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 				</div>
 			</div>
@@ -71,28 +63,13 @@ if ($_POST['button']){
 				<table class="layui-table admin-table">
 					<thead>
 					<tr>
+						<th>ID</th>
 						<th>管理员账号</th>
                         <th>创建日期</th>
 						<th>备注</th>
 						<th>操作</th>
 					</tr>
 					</thead>
-					<?php
-                        while ($row = mysqli_fetch_assoc($rs)) {
-                        $user_id = $row['user_id'];
-                    ?>
-					<tr>
-						<th><?php echo $row['user_name']?></th>
-						<th><?php echo $row['user_date']?></th>
-						<th><?php echo $row['info']?></th>
-						<td>
-							<button type="button" href="<?php echo "editUser.php?id=".$user_id?>" class="layui-btn layui-btn-mini">编辑</button>
-							<button type="button" href="<?php echo "deleteUser.php?id=".$user_id ?>" class="layui-btn layui-btn-danger layui-btn-mini">删除</button>
-						</td>
-					</tr>
-					<?php
-                }
-                ?>
 					<tbody id="content">
 					</tbody>
 				</table>
@@ -105,40 +82,77 @@ if ($_POST['button']){
 				base: 'js/'
 			});
 
-			layui.use('begtable', function() {
-				var begtable = layui.begtable(),
+			layui.use(['begtable','form'], function() {
+				var $ = layui.jquery,
 					layer = layui.layer,
-					$ = layui.jquery,
-					laypage = layui.laypage;
+                    form = layui.form();
 
-				laypage({
-					cont: $('.beg-table-paged'),
-					pages: 25 //总页数
-						,
-					groups: 5 //连续显示分页数
-						,
-					jump: function(obj, first) {
-						//得到了当前页，用于向服务端请求对应数据
-						var curr = obj.curr;
-						if(!first) {
-							//layer.msg('第 '+ obj.curr +' 页');
-						}
-					}
-				});
-				begtable.set({
-					bordered: true,
-					hovered: true,
-					striped: true,
-					elem: '#xx',
-					columns: columns,
-					data: data,
-					checked: true,
-					//paged:false
-				}).init();
+				//显示所有管理员
+				$(document).ready(function () {
+                    $.ajax({
+                        type:"post",
+                        url:"userSelect.php",
+                        dataType:"json",
+                        success:function (msg) {
+                            console.log(msg);
+                         $("#content").html("");
+                         var str;
+                         $.each(msg,function (index,item) {
+                             str = "<tr><td>" + (index + 1) + "</td><td>" + item['name'] + "</td><td>" + item['time'] + "</td><td>" + item['info'] +
+                                 "</td><td>" +
+                                 "<a href=\"javascript:;\" data-name=\"{{ item.name }}\" data-opt=\"edit\" class=\"layui-btn layui-btn-mini\">编辑</a>" +
+                                 "<a class=\"layui-btn layui-btn-danger layui-btn-mini\" onclick='deleteUser(" + item['id'] + ")'>删除</a>" +
+                                 "</td></tr>";
+                             $("#content").append(str);
+                         })
+                        }
+                    })
+                })
 
-				console.log(begtable.getSelectedRows());
-				console.log(location);
+                //密码验证
+                form.verify({
+                    pass_one:[/^[\S]{6,12}$/,'密码必须6到12位，且不能出现空格'],
+                    pass_two:function (value) {
+                        if (value != $("#password").val()){
+                            return '两次密码不一致';
+                        }
+                    }
+                });
+
+                //监听添加管理员
+                form.on('submit(addUser)',function () {
+                    $.ajax({
+                        type:"post",
+                        url:"userAdd.php",
+                        data:{username:$("#username").val(),password:$("#password").val(),info:$("#info").val()},
+                        dataType:"text",
+                        success:function (msg) {
+                            if (msg === "ok"){
+                                layer.msg('添加成功',{icon:6,time:500},function () {
+                                    location.reload();
+                                });
+                            }
+                        }
+                    })
+                })
+
+
 			});
+
+			//删除管理员
+            function deleteUser(id) {
+                layer.confirm("是否删除？", {icon: 3, title: '删除'}, function (index) {
+                    $.ajax({
+                        type: "post",
+                        url: "deleteUser.php",
+                        data: {id: id},
+                    });
+                    layer.msg('删除成功', {icon: 6, time: 500}, function () {
+                        location.reload();
+                    });
+                    layer.close(index);
+                })
+            }
 		</script>
 
 	</body>
