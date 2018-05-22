@@ -26,7 +26,7 @@ var navs = [{
 	"children": [{
         "title": "新增分类",
         "icon": "&#xe61f;",
-        "href": "add.php"
+        "href": "addItem.php"
     },{
         "title": "栏目管理",
         "icon": "&#xe630;",

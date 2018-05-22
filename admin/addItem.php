@@ -1,13 +1,3 @@
-<?php
-require_once "conn.php";
-if (@$_POST['button']){
-    $item_name = $_POST['quiz'];
-    $item_title = $_POST['title'];
-    $item_content = $_POST['content'];
-    $stmt = "INSERT INTO item (item_name, item_title, item_content) VALUES ('$item_name', '$item_title', '$item_content')";
-    $conn->query($stmt);
-}
-?>
 <!DOCTYPE html>
 <html>
 
@@ -23,6 +13,11 @@ if (@$_POST['button']){
 
 		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
 		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+        <!-- 配置文件 -->
+        <script type="text/javascript" src="ueditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script type="text/javascript" src="ueditor.all.js"></script>
+        <script src="../js/jquery.js"></script>
 	</head>
 	<body>
 		<div style="margin: 15px;">
@@ -34,7 +29,7 @@ if (@$_POST['button']){
 				<div class="layui-form-item">
 					<label class="layui-form-label">栏目选择</label>
 					<div class="layui-input-inline" style="z-index: 9999;">
-						<select name="quiz">
+						<select name="quiz" id="quiz">
 							<option value="">请选择要添加栏目</option>
 							<optgroup label="中心简介">
 								<option value="中心简介">新增简介</option>
@@ -84,15 +79,14 @@ if (@$_POST['button']){
 				</div>
                 <div class="layui-form-item layui-form-text">
 					<label class="layui-form-label">编辑器</label>
-					<div class="layui-input-block">
+					<div class="layui-input-block" id="aa">
                         <!-- 加载编辑器的容器 -->
-                        <script id="container" name="content" type="text/plain">
-                        </script>
+                        <script id="container" name="content" type="text/plain"></script>
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<div class="layui-input-block">
-                        <input  class="layui-btn" type="submit" name="button" value="立即提交" />
+                        <button  class="layui-btn" lay-submit lay-filter="addItem">立即提交</button>
 						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 					</div>
 				</div>
@@ -100,19 +94,34 @@ if (@$_POST['button']){
 
 		</div>
 		<script type="text/javascript" src="plugins/layui/layui.js"></script>
-        <!-- 配置文件 -->
-        <script type="text/javascript" src="ueditor.config.js"></script>
-        <!-- 编辑器源码文件 -->
-        <script type="text/javascript" src="ueditor.all.js"></script>
-		<script>
-			layui.use(['form', 'layedit', 'laydate'], function() {
-				var form = layui.form(),
-					layer = layui.layer,
-					layedit = layui.layedit,
-					laydate = layui.laydate;
 
-				//创建一个编辑器
-                var ue = UE.getEditor('container');
+		<script>
+            var ue = UE.getEditor('container');
+
+			layui.use(['form', 'layedit', 'laydate'], function() {
+                var $ = layui.jquery,
+                    layer = layui.layer,
+                    form = layui.form();
+
+
+				form.on('submit(addItem)',function () {
+				   // alert(ue.getContentTxt());
+				   $.ajax({
+                       type:'post',
+                       url:'addItemDao.php',
+                       data:{item:$('#quiz').val(),title:$('#title').val(),content:ue.getContentTxt()},
+                       dataType:'text',
+                       success:function (msg) {
+                           alert(msg);
+                           if (msg === "ok"){
+                               layer.msg('添加成功',{icon:6,time:500},function () {
+                                   location.reload();
+                               });
+                           }
+                       }
+                   })
+                });
+
 				//自定义验证规则
 				form.verify({
 					title: function(value) {
