@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<title>管理员管理</title>
@@ -100,7 +99,7 @@
                          $.each(msg,function (index,item) {
                              str = "<tr><td>" + (index + 1) + "</td><td>" + item['name'] + "</td><td>" + item['time'] + "</td><td>" + item['info'] +
                                  "</td><td>" +
-                                 "<a href=\"javascript:;\" data-name=\"{{ item.name }}\" data-opt=\"edit\" class=\"layui-btn layui-btn-mini\">编辑</a>" +
+                                 "<a class=\"layui-btn layui-btn-mini\" onclick='editUser(" + item['id'] + ")'>编辑</a>" +
                                  "<a class=\"layui-btn layui-btn-danger layui-btn-mini\" onclick='deleteUser(" + item['id'] + ")'>删除</a>" +
                                  "</td></tr>";
                              $("#content").append(str);
@@ -153,8 +152,67 @@
                     layer.close(index);
                 })
             }
+
+            //编辑管理员
+            function editUser(id) {
+                $.ajax({
+                    type:'post',
+                    url:'editUser.php',
+                    data:{id:id},
+                    dataType:'json',
+                    success:function (msg) {
+                        $("input[name='u_username']").val(msg[0]['name']);
+                        $("input[name='u_pwd']").val(msg[0]['pwd']);
+                        $("input[name='u_info']").val(msg[0]['info']);
+
+                        layer.open({
+                            type:1,
+                            title:'修改信息',
+                            area:['360px','400px'],
+                            skin:'layui-layer-rim',
+                            content:$('#userUpdate')
+                        })
+                    }
+
+                });
+
+            }
 		</script>
 
 	</body>
+    <div class="layui-field-box layui-form" id="userUpdate" style="display: none">
+        <form class="layui-form" action="" method="post">
+            <div class="layui-form-item">
+                <label class="layui-form-label">输入用户名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="u_username" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">请输入密码</label>
+                <div class="layui-input-inline">
+                    <input name="u_pwd" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">请再次输入</label>
+                <div class="layui-input-inline">
+                    <input name="u_pwd" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">请填写备注</label>
+                <div class="layui-input-inline">
+                    <input name="u_info" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit="" lay-filter="updateUser">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
 </html>
