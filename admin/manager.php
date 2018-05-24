@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="css/global.css" media="all">
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/table.css"/>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="ueditor.all.js"></script>
     <script src="../js/jquery.js"></script>
 </head>
 
@@ -66,6 +70,7 @@
 
 <script type="text/javascript" src="plugins/layui/layui.js"></script>
 <script>
+    var ue = UE.getEditor('container');
     layui.config({
         base: 'js/'
     });
@@ -91,11 +96,28 @@
                         str = "<tr><td>" + (index + 1) + "</td><td>" + item['title'] + "</td><td>" + item['user'] + "</td><td>" + item['time'] +
                             "</td><td>" +
                             "<a class=\"layui-btn layui-btn-normal layui-btn-mini\" lay-even='detail'>预览</a>" +
-                            "<a class=\"layui-btn layui-btn-mini\" onclick='editItem(\" + item['id'] + \")'>编辑</a>" +
+                            "<a class=\"layui-btn layui-btn-mini\" onclick='editItem(" + item['id'] + ")'>编辑</a>" +
                             "<a class=\"layui-btn layui-btn-danger layui-btn-mini\" onclick='deleteItem(" + item['id'] + ")'>删除</a>" +
                             "</td></tr>";
                         $("#aa").append(str);
                     });
+                }
+            })
+        })
+
+        //监听修改项目
+        form.on('submit(updateItem)',function () {
+            $.ajax({
+                type:'post',
+                url:'updateItem.php',
+                data:{i_id:$('#i_id').val(),title:$('#title').val(),container:$('#container').val()},
+                dataType:'text',
+                success:function (msg) {
+                    if (msg === "ok"){
+                        layer.msg('修改成功',{icon:6,time:500},function () {
+                            location.reload();
+                        });
+                    }
                 }
             })
         })
@@ -117,75 +139,56 @@
     }
 
     function editItem(id) {
-
+        $.ajax({
+            type:'post',
+            url:'editItem.php',
+            data:{id:id},
+            dataType:'json',
+            success:function (msg) {
+                console.log(msg);
+                $("input[name='i_id']").val(id);
+                $("input[name='title']").val(msg[0]['title']);
+                $("textarea[name='content'").val(msg[0]['content']);
+                layer.open({
+                    type:1,
+                    title:"修改项目",
+                    area:['1000px','520px'],
+                    skin:'layui-layer-rim',
+                    content:$('#itemUpate')
+                })
+            }
+        })
     }
 </script>
 </body>
+<div class="layui-field-box layui-form" id="itemUpate" style="display: none">
 <form class="layui-form" action="" method="post">
     <div class="layui-form-item">
-        <label class="layui-form-label">栏目选择</label>
-        <div class="layui-input-inline" style="z-index: 9999;">
-            <select name="quiz" id="quiz">
-                <option value="">请选择要添加栏目</option>
-                <optgroup label="中心简介">
-                    <option value="中心简介">新增简介</option>
-                </optgroup>
-                <optgroup label="中心负责人">
-                    <option value="中心负责人">新增负责人</option>
-                </optgroup>
-                <optgroup label="申报书">
-                    <option value="申报书">新增申报书</option>
-                </optgroup>
-                <optgroup label="教学成果">
-                    <option value="教学成果">新增教学成本</option>
-                </optgroup>
-                <optgroup label="政策制度">
-                    <option value="政策制度">新增政策制度</option>
-                </optgroup>
-                <optgroup label="中心视频">
-                    <option value="中心视频">新增中心视频</option>
-                </optgroup>
-                <optgroup label="典型案例">
-                    <option value="典型案例">新增典型案例</option>
-                </optgroup>
-                <optgroup label="典型教材">
-                    <option value="典型教材">新增典型教材</option>
-                </optgroup>
-                <optgroup label="典型课件">
-                    <option value="典型课件">新增典型课件</option>
-                </optgroup>
-                <optgroup label="产学合作">
-                    <option value="产学合作">新增产学合作</option>
-                </optgroup>
-                <optgroup label="新闻管理">
-                    <option value="资讯">新增新闻</option>
-                </optgroup>
-                <optgroup label="友情链接">
-                    <option value="友情链接">新增友情链接</option>
-                </optgroup>
-            </select>
+        <input type="hidden" name="s_id">
+        <label class="layui-form-label">ID</label>
+        <div class="layui-input-inline">
+            <input  style="background:#F6F6F6" name="i_id" id="i_id" disabled="disabled" autocomplete="off" class="layui-input">
         </div>
     </div>
-
     <div class="layui-form-item">
         <label class="layui-form-label">单行输入框</label>
         <div class="layui-input-block">
-            <input type="text" name="title" id="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                   class="layui-input">
+            <input type="text" name="title" id="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">编辑器</label>
-        <div class="layui-input-block" id="aa">
+        <div class="layui-input-block">
             <!-- 加载编辑器的容器 -->
-            <script id="container" name="content" type="text/plain"></script>
-        </div>
+        <textarea name="content" id="container"></textarea>
+       </div>
     </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
-            <button class="layui-btn" lay-submit lay-filter="addItem">立即提交</button>
-            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            <button  class="layui-btn" lay-submit lay-filter="updateItem">立即提交</button>
+            <button onclick="window.close()" class="layui-btn layui-btn-primary">取消</button>
         </div>
     </div>
 </form>
+</div>
 </html>
