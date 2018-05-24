@@ -21,11 +21,3 @@ while($row = $rs->fetch_assoc()){
     $arr[]=$datadom;
 }
 echo  urldecode(json_encode($arr));
-
-
- /*   $user_name = $_POST['username'];
-    $user_pwd = $_POST['password'];
-    $info = $_POST['info'];
-    $stam = $conn->query("update users set user_name = '$user_name',user_pwd = '$user_pwd',info = '$info' where user_id = '$id'");*/
-
-

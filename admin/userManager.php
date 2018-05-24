@@ -134,6 +134,22 @@
                         }
                     })
                 })
+               //监听修改管理员信息
+                form.on('submit(updateUser)',function () {
+                    $.ajax({
+                        type:'post',
+                        url:'updateUser.php',
+                        data:{u_id:$("#u_id").val(),u_name:$("#u_name").val(),u_pwd:$("#u_pwd").val(),u_info:$("#u_info").val()},
+                        dataType:'text',
+                        success:function (msg) {
+                            if (msg === "ok"){
+                                layer.msg('修改成功',{icon:6,time:500},function () {
+                                    location.reload();
+                                });
+                            }
+                        }
+                    })
+                })
 
 
 			});
@@ -161,10 +177,11 @@
                     data:{id:id},
                     dataType:'json',
                     success:function (msg) {
+                        console.log(msg);
+                        $("input[name='u_id']").val(id);
                         $("input[name='u_username']").val(msg[0]['name']);
                         $("input[name='u_pwd']").val(msg[0]['pwd']);
                         $("input[name='u_info']").val(msg[0]['info']);
-
                         layer.open({
                             type:1,
                             title:'修改信息',
@@ -172,10 +189,10 @@
                             skin:'layui-layer-rim',
                             content:$('#userUpdate')
                         })
+
                     }
 
                 });
-
             }
 		</script>
 
@@ -183,33 +200,34 @@
     <div class="layui-field-box layui-form" id="userUpdate" style="display: none">
         <form class="layui-form" action="" method="post">
             <div class="layui-form-item">
+                <input type="hidden" name="s_id">
+                <label class="layui-form-label">ID</label>
+                <div class="layui-input-inline">
+                    <input  style="background:#F6F6F6" name="u_id" id="u_id" disabled="disabled" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
                 <label class="layui-form-label">输入用户名</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="u_username" autocomplete="off" class="layui-input">
+                    <input type="text" name="u_username" id="u_name"  autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">请输入密码</label>
                 <div class="layui-input-inline">
-                    <input name="u_pwd" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">请再次输入</label>
-                <div class="layui-input-inline">
-                    <input name="u_pwd" autocomplete="off" class="layui-input">
+                    <input name="u_pwd" id="u_pwd" lay-verify="pass_one1" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">请填写备注</label>
                 <div class="layui-input-inline">
-                    <input name="u_info" autocomplete="off" class="layui-input">
+                    <input name="u_info" id="u_info" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-block">
                     <button class="layui-btn" lay-submit="" lay-filter="updateUser">立即提交</button>
-                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    <button onclick="window.close()" class="layui-btn layui-btn-primary">取消</button>
                 </div>
             </div>
         </form>

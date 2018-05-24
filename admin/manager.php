@@ -91,7 +91,7 @@
                         str = "<tr><td>" + (index + 1) + "</td><td>" + item['title'] + "</td><td>" + item['user'] + "</td><td>" + item['time'] +
                             "</td><td>" +
                             "<a class=\"layui-btn layui-btn-normal layui-btn-mini\" lay-even='detail'>预览</a>" +
-                            "<a href=\"javascript:;\" data-name=\"{{ item.name }}\" data-opt=\"edit\" class=\"layui-btn layui-btn-mini\">编辑</a>" +
+                            "<a class=\"layui-btn layui-btn-mini\" onclick='editItem(\" + item['id'] + \")'>编辑</a>" +
                             "<a class=\"layui-btn layui-btn-danger layui-btn-mini\" onclick='deleteItem(" + item['id'] + ")'>删除</a>" +
                             "</td></tr>";
                         $("#aa").append(str);
@@ -115,6 +115,77 @@
             layer.close(index);
         })
     }
+
+    function editItem(id) {
+
+    }
 </script>
 </body>
+<form class="layui-form" action="" method="post">
+    <div class="layui-form-item">
+        <label class="layui-form-label">栏目选择</label>
+        <div class="layui-input-inline" style="z-index: 9999;">
+            <select name="quiz" id="quiz">
+                <option value="">请选择要添加栏目</option>
+                <optgroup label="中心简介">
+                    <option value="中心简介">新增简介</option>
+                </optgroup>
+                <optgroup label="中心负责人">
+                    <option value="中心负责人">新增负责人</option>
+                </optgroup>
+                <optgroup label="申报书">
+                    <option value="申报书">新增申报书</option>
+                </optgroup>
+                <optgroup label="教学成果">
+                    <option value="教学成果">新增教学成本</option>
+                </optgroup>
+                <optgroup label="政策制度">
+                    <option value="政策制度">新增政策制度</option>
+                </optgroup>
+                <optgroup label="中心视频">
+                    <option value="中心视频">新增中心视频</option>
+                </optgroup>
+                <optgroup label="典型案例">
+                    <option value="典型案例">新增典型案例</option>
+                </optgroup>
+                <optgroup label="典型教材">
+                    <option value="典型教材">新增典型教材</option>
+                </optgroup>
+                <optgroup label="典型课件">
+                    <option value="典型课件">新增典型课件</option>
+                </optgroup>
+                <optgroup label="产学合作">
+                    <option value="产学合作">新增产学合作</option>
+                </optgroup>
+                <optgroup label="新闻管理">
+                    <option value="资讯">新增新闻</option>
+                </optgroup>
+                <optgroup label="友情链接">
+                    <option value="友情链接">新增友情链接</option>
+                </optgroup>
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">单行输入框</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" id="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">编辑器</label>
+        <div class="layui-input-block" id="aa">
+            <!-- 加载编辑器的容器 -->
+            <script id="container" name="content" type="text/plain"></script>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="addItem">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
 </html>
