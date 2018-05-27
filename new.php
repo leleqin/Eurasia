@@ -1,7 +1,7 @@
 <?php
 require_once("conn.php");
-$rs = $conn->query("select * from item where item_name = '中心简介'");
-$rs2 = $conn->query("select * from item where item_name = '中心简介'");
+$rs = $conn->query("select * from item where item_name = '资讯'");
+$rs2 = $conn->query("select * from item where item_name = '资讯'");
 $rsNew = $conn->query("select * from item where item_name = '资讯'");
 ?>
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ $rsNew = $conn->query("select * from item where item_name = '资讯'");
         <!-- Blog Column -->
         <div class="col-md-8">
             <h1 class="page-header sidebar-title">
-                中心简介
+                实验室资讯
             </h1>
             <!-- First Blog Post -->
             <?php
@@ -77,14 +77,14 @@ $rsNew = $conn->query("select * from item where item_name = '资讯'");
             <div class="row blogu">
                 <div class="col-sm-4 col-md-4 ">
                     <div class="blog-thumb">
-                        <a href="<?php echo "centerCategories.php?title=".$var2 ?>">
+                        <a href="<?php echo "newCategories.php?title=".$var2 ?>">
                             <img class="img-responsive" src="<?php echo $row['item_file']?>" alt="photo">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-8 col-md-8">
                     <h2 class="blog-title">
-                        <a href="<?php echo "centerCategories.php?title=".$var2 ?>"><?php echo $row['item_title']?></a>
+                        <a href="<?php echo "newCategories.php?title=".$var2 ?>"><?php echo $row['item_title']?></a>
                     </h2>
                     <p><?php echo $row['item_brief']?></p>
                 </div>
@@ -107,32 +107,11 @@ $rsNew = $conn->query("select * from item where item_name = '资讯'");
                     while ($row2 = mysqli_fetch_assoc($rs2)){
                         $var = $row2['item_title'];
                     ?>
-                    <li><a href="<?php echo "centerCategories.php?title=".$var ?>"><?php echo $row2['item_title']?></a></li>
+                    <li><a href="<?php echo "newCategories.php?title=".$var ?>"><?php echo $row2['item_title']?></a></li>
                         <?php
                         }
                         ?>
                 </ul>
-            </div>
-            <!-- Recent Posts -->
-            <div class="blog-sidebar">
-                <h4 class="sidebar-title"><i class="fa fa-align-left"></i> 实验室资讯</h4>
-                <hr style="margin-bottom: 5px;">
-                <?php
-                while ($rowNew = mysqli_fetch_assoc($rsNew)){
-                $varNew = $rowNew['item_title'];
-                ?>
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="img-responsive media-object" src="images/blog1.jpg" alt="Media Object">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href="<?php echo "newCategories.php?title=".$varNew ?>"><?php echo $rowNew['item_title']?></a></h4>
-                        <?php echo $rowNew['item_brief'] ?>
-                    </div>
-                </div>
-                    <?php
-                }
-                ?>
             </div>
 
         </aside>

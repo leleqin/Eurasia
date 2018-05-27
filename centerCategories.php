@@ -1,3 +1,10 @@
+<?php
+require_once("conn.php");
+$title = $_GET['title'];
+$rs = $conn->query("select * from item where item_name = '中心简介'AND item_title = '$title'");
+$rs2 = $conn->query("select * from item where item_name = '中心简介'");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +14,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="ATIS">
+        <script src="../Eurasia/admin/ueditor.parse.js"></script>
 
-        <title>PATROS - HTML5 FREE TEMPLATE</title>
+        <title>金融实验教学示范中心</title>
 
         <!-- Bootstrap Core CSS -->
 
@@ -44,14 +52,13 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right custom-menu">
-						<li><a href="index.php#home">Home</a></li>
-						<li><a href="index.php#about">About</a></li>
-						<li><a href="index.php#services">Services</a></li>
-						<li><a href="index.php#meet-team">Team</a></li>
-						<li><a href="index.php#portfolio1">Portofolio</a></li>
-						<li><a href="index.php#contact">Contact</a></li>
-						<li><a href="blog.html">Blog</a></li>
-						<li class="active"><a href="single-post.html">Single</a></li>
+                        <li><a href="index.php">首页</a></li>
+                        <li><a href="index.php#about">中心简介</a></li>
+                        <li><a href="index.php#services">典型案例</a></li>
+                        <li><a href="index.php#bloghome">负责人</a></li>
+                        <li><a href="index.php#meet-team">实验室资讯</a></li>
+                        <li><a href="index.php#portfolio1">实验室展</a></li>
+                        <li><a href="index.php#contact">申报书</a></li>
 					</ul>
 				</div>
 			</div>
@@ -60,43 +67,42 @@
     <!-- Page Content -->
 	    <div class="container blog singlepost">
 			<div class="row">
+                <?php
+                while($row=mysqli_fetch_assoc($rs)){
+                ?>
 				<article class="col-md-8">
-			        <h1 class="page-header sidebar-title">理财工作室</h1>
-			        <img src="images/unsplash1.jpg" class="img-responsive" alt="photo" />
+			        <h1 class="page-header sidebar-title"><?php echo $row['item_title']?></h1>
+<!--			        <img src="<?php /*echo $row['item_file']*/?>" class="img-responsive" alt="photo" style="width: 700px;height: 450px;"/>
 			        <hr>
 					<div class="row">
 						<div class="col-md-12">
 					</div>
-					</div>
-					<p>理财工作室是专门为金融学院的学生提供理财模拟操作的专业实训室，工作室旨在培养具有专业理财规划实操能力的应用型人才。当前配套软件包括个人理财及保险软件。</p>
-					<p>工作室自2014年9月投入使用以来，承接课程包括《个人理财》、《保险学》、《证券投资分析》等课程，旨在锻炼学生将理论知识与实践相结合，利用实验室的软硬件设施制定切合实际、具有可操作性的包括消费支出规划、教育规划、风险管理与保险规划、税收筹划、退休养老规划、财产分配与传承规划等某方面或者综合性的理财方案。其次，工作室还为分院教师的科研活动、学生第二课堂活动提供了便利条件，丰富了工作室的使用形式。专业覆盖率达到100%，实验实训课程开出率达到100%。</p>
-					<p>此外，工作室还在课程以外的指定时间对学生开放，学生利用开放时间参加了两届“全国大学生金融模拟交易大赛”并取得良好成绩，荣获第七届全国十佳理财师大赛全国总决赛“全国十佳理财团队”称号。同时，工作室还为分院的产学合作活动提供良好条件，以工作室为纽带，通过项目实施、校企合作实现双赢，既达到锻炼学生参与实践的能力，又有利于维持企业与分院的长期合作。</p>
-
+					</div>-->
+					<p><?php echo html_entity_decode($row['item_content']) ?></p>
 					<!-- Blog Comments -->
 			        <div class="comments1">
 
 			        </div>
 			    </article>
+                <?php
+                }
+                ?>
 				<!-- Blog Sidebar Column -->
 				<aside class="col-md-4 sidebar-padding">
-					<div class="blog-sidebar">
-						<div class="input-group searchbar">
-							<input type="text" class="form-control searchbar" placeholder="Search for...">
-							<span class="input-group-btn">
-							<button class="btn btn-default" type="button">Search</button>
-							</span>
-						</div><!-- /input-group -->
-					</div>
 					<!-- Blog Categories -->
 					<div class="blog-sidebar">
 						<h4 class="sidebar-title"><i class="fa fa-list-ul"></i> Categories</h4>
 						<hr>
 						<ul class="sidebar-list">
 							<li><a href="center.php">目录</a></li>
-							<li><a href="center_1.php">中心简介</a></li>
-							<li><a href="center_2.html">金融实验室</a></li>
-							<li><a href="center_3.html">实验银行</a></li>
-							<li><a href="center_4.html">理财工作室</a></li>
+                            <?php
+                            while ($row2 = mysqli_fetch_assoc($rs2)){
+                                $var = $row2['item_title'];
+                                ?>
+                                <li><a href="<?php echo "centerCategories.php?title=".$var ?>"><?php echo $row2['item_title']?></a></li>
+                                <?php
+                            }
+                            ?>
 						</ul>
 					</div>
 					<!-- Recent Posts -->
@@ -142,19 +148,6 @@
 					            This is some sample text. This is some sample text. This is some sample text.
 					        </div>
 					    </div>
-					</div>
-
-					<div class="blog-sidebar">
-					    <h4 class="sidebar-title"><i class="fa fa-comments"></i> Recent Comments</h4>
-					    <hr style="margin-bottom: 5px;">
-					     <ul class="sidebar-list">
-					        <li><h5 class="blog-title">Author Name</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-					        </li>
-					        <li><h5 class="blog-title">Author Name</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-					        </li>
-					        <li><h5 class="blog-title">Author Name</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-					        </li>
-					    </ul>
 					</div>
 
 				</aside>

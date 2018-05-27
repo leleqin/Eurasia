@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<title>新增项目</title>
@@ -72,11 +71,30 @@
 				</div>
 
 				<div class="layui-form-item">
-					<label class="layui-form-label">单行输入框</label>
+					<label class="layui-form-label">输入标题</label>
 					<div class="layui-input-block">
 						<input type="text" name="title" id="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
 					</div>
 				</div>
+
+<!--                <div class="layui-form-item layui-form-text">
+                <form id="uploadForm" enctype="multipart/form-data" class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">上传图片</label>
+                    <input id="file" type="file" name="file"/>
+                </form>
+                <button type="button" class="layui-btn" id="imgUp" lay-submit lay-filter="imgUp">
+                    <i class="layui-icon">&#xe64a;</i>上传图片
+                </button>
+                </div>-->
+
+
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">内容简介</label>
+                    <div class="layui-input-block">
+                        <textarea name="brief" id="brief" lay-verify="brief" placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+
                 <div class="layui-form-item layui-form-text">
 					<label class="layui-form-label">编辑器</label>
 					<div class="layui-input-block" id="aa">
@@ -103,13 +121,13 @@
                     layer = layui.layer,
                     form = layui.form();
 
-
+                //监听提交按钮
 				form.on('submit(addItem)',function () {
-				   // alert(ue.getContentTxt());
+				   // alert(ue.getContent());
 				   $.ajax({
                        type:'post',
                        url:'addItemDao.php',
-                       data:{item:$('#quiz').val(),title:$('#title').val(),content:ue.getContentTxt()},
+                       data:{item:$('#quiz').val(),title:$('#title').val(),brief:$('#brief').val(),content:ue.getContent()},
                        dataType:'text',
                        success:function (msg) {
                            alert(msg);
@@ -121,6 +139,25 @@
                        }
                    })
                 });
+
+                //监听图片上传
+/*                form.on('submit(imgUp)',function () {
+                    var formData = new FormData($('#uploadForm')[0]);
+                    $.ajax({
+                        type:'post',
+                        url:'/admin/php/upload/{filename}',
+                        data: formData,
+                        cache: false,
+                        processData: false,
+                        contentType: false,
+                        success:function (data) {
+                            alert(data);
+                        },
+                        error:function () {
+                            alert("上传失败");
+                        }
+                    })
+                })*/
 
 				//自定义验证规则
 				form.verify({

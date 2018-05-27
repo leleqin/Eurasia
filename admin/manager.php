@@ -110,7 +110,7 @@
             $.ajax({
                 type:'post',
                 url:'updateItem.php',
-                data:{i_id:$('#i_id').val(),title:$('#title').val(),container:$('#container').val()},
+                data:{i_id:$('#i_id').val(),title:$('#title').val(),container:ue.getContentTxt()},
                 dataType:'text',
                 success:function (msg) {
                     if (msg === "ok"){
