@@ -155,7 +155,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 									  <i class="fa fa-line-chart fa-stack-1x"></i>
 									</span>
 									</a>
-									<h3><a href="#">典型案例</a></h3>
+									<h3><a href="servicesCase.php">典型案例</a></h3>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 								</div>
 							</div>
@@ -167,7 +167,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 									  <i class="fa fa-users fa-stack-1x"></i>
 									</span>
 									</a>
-									<h3><a href="#">典型教材</a></h3>
+									<h3><a href="servicesTeach.php">典型教材</a></h3>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 								</div>
 							</div>
@@ -179,7 +179,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 									  <i class="fa fa-code fa-stack-1x"></i>
 									</span>
 									</a>
-									<h3><a href="#">典型课件</a></h3>
+									<h3><a href="servicesCouse.php">典型课件</a></h3>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 								</div>
 							</div>
@@ -191,7 +191,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 									  <i class="fa fa-cogs fa-stack-1x"></i>
 									</span>
 									</a>
-									<h3><a href="#">产学合作</a></h3>
+									<h3><a href="learnCompany.php">产学合作</a></h3>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 								</div>
 							</div>
@@ -213,7 +213,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
                                 <img src="images/blog1.jpg" alt="img09" class="img-responsive" />
                                 <figcaption>
                                     <h2>Blog Post Long Title</h2>
-                                    <a href="#">View more</a>
+                                    <a href="leader.php">View more</a>
                                 </figcaption>
                             </figure>
                         </div>
