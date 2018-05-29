@@ -73,7 +73,7 @@
                     });
                 }
                 else if (msg === "ok"){
-                    window.location.href="index.html";
+                    window.location.href="index.php";
                 }
             },
             error:function () {

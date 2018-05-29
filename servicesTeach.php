@@ -13,7 +13,7 @@ $rsNew = $conn->query("select * from item where item_name = '资讯'");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>中心简介</title>
+    <title>典型教材</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 

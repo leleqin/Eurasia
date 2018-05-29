@@ -11,7 +11,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>金融实验室</title>
+		<title>计算机实验教学中心</title>
 		<!-- Bootstrap Core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom Fonts -->
@@ -64,7 +64,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<div class="text-center"><h3>金融实验教学示范中心</h3></div>
+								<div class="text-center"><h3>计算机实验教学示范中心</h3></div>
 							</div>
 						</div>
 						<h4>Welcome to Eurasia university</h4>
@@ -74,7 +74,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<div class="text-center"><h3>金融实验教学示范中心</h3></div>
+								<div class="text-center"><h3>计算机实验教学示范中心</h3></div>
 							</div>
 						</div>
 						<h4>Welcome to Eurasia university</h4>
@@ -84,7 +84,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<div class="text-center"><h3>金融实验教学示范中心</h3></div>
+								<div class="text-center"><h3>计算机实验教学示范中心</h3></div>
 							</div>
 						</div>
 						<h4>Welcome to Eurasia university</h4>
@@ -94,7 +94,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<div class="text-center"><h3>金融实验教学示范中心</h3></div>
+								<div class="text-center"><h3>计算机实验教学示范中心</h3></div>
 							</div>
 						</div>
 						<h4>Welcome to Eurasia university</h4>
@@ -104,7 +104,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12">
-								<div class="text-center"><h3>金融实验教学示范中心</h3></div>
+								<div class="text-center"><h3>计算机实验教学示范中心</h3></div>
 							</div>
 						</div>
 						<h4>Welcome to Eurasia university</h4>
@@ -130,8 +130,9 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 							<img class="img-responsive displayed" src="images/short.png" alt="Company about"/>
 							<div class="row">
 								<div class="col-md-12">
-                                    <p> 西安欧亚学院的金融实验教学示范中心，起源于 2005 年的“金融与财务模拟实验室”和 2008 年的“金融柜台业务仿真实训室”。<br>
-                                        经过十年的不断完善与发展，金融实验教学示范中心已累计投入资金 400 余万元，包含理财工作室、实验银行、金融实验室 3 个已建成的基础实验室，互联网金融应用中心、金融自...<span class="color-elements"><a href="center.php">更多</a></span>。
+                                    <p> 为适应企业和市场的发展变化要求，2005年，信息工程学院在整合原三个计算机实训室基础上组建信息工程学院计算机实验教学中心。<br>
+                                        该中心是学院提供优质课程服务，培养创新思维能力，拓展学生终身学习机会，助推学生职业发展重要基地。<br>
+                                        学校和分院领导特别重视校内实习实训基地建设，不断完善办学条件，加大投资力度，优化实训设备和设施配置，调整实验、实训布局，形成了具有专业特色的校内实习实训基地，构建了以就业能力培养为中心的实践教学模式，建立了专业技能、职业素质培养有机结合的实践教学体系和质量监控体系，为培养学生的实践操作能力提供了良好的条件……<span class="color-elements"><a href="center.php">更多</a></span>。
 									</p>
 								</div>
 							</div>
@@ -221,7 +222,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
                             <figure class="effect-oscar">
                             </figure>
                             <p class="text-center">关宏，男，副教授，陕西省金融学会委员，西安市反假货币、反洗钱培训基地讲师。原任职于西安石油大学计算机学院，现任全国高等院校计算机教育研究会理事、陕西省计算机教育学会秘书长，从事金融学相关教学与科研工作10多年，发表学术论文30余篇，主编或独著经济类教材10余部，主持各类科研教改项目10多项，获厅（校）级及以上奖励6多项，现为我院金融系主任，专家委员会成员。</p>
-                            <div class="text-center"><a class="btn btn-primary btn-noborder-radius hvr-bounce-to-bottom">Read More</a></div>
+                            <div class="text-center"><a class="btn btn-primary btn-noborder-radius hvr-bounce-to-bottom" href="leader.php">Read More</a></div>
                         </div>
                         <div class="col-md-4 col-sm-12 col-xs-12 portfolio-item">
                             <figure class="effect-oscar">

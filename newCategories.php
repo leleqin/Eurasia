@@ -16,7 +16,7 @@ $rs2 = $conn->query("select * from item where item_name = '资讯'");
 		<meta name="author" content="ATIS">
         <script src="../Eurasia/admin/ueditor.parse.js"></script>
 
-        <title>金融实验教学示范中心</title>
+        <title>计算机实验教学中心</title>
 
         <!-- Bootstrap Core CSS -->
 

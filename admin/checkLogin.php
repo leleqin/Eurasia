@@ -9,7 +9,7 @@ require_once("conn.php");
     $usernum=mysqli_num_rows($rs);
     if($usernum>=1)
     {
-        $_SESSION['gly']=$uname;
+        $_SESSION['gly']=$name;
         echo "ok";
     }
     else{
