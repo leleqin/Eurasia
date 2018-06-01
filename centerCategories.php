@@ -3,7 +3,7 @@ require_once("conn.php");
 $title = $_GET['title'];
 $rs = $conn->query("select * from item where item_name = '中心简介'AND item_title = '$title'");
 $rs2 = $conn->query("select * from item where item_name = '中心简介'");
-
+$rsNew = $conn->query("select * from item where item_name = '资讯'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -106,49 +106,27 @@ $rs2 = $conn->query("select * from item where item_name = '中心简介'");
 						</ul>
 					</div>
 					<!-- Recent Posts -->
-					<div class="blog-sidebar">
-					    <h4 class="sidebar-title"><i class="fa fa-align-left"></i> Recent Posts</h4>
-					    <hr style="margin-bottom: 5px;">
+                    <div class="blog-sidebar">
+                        <h4 class="sidebar-title"><i class="fa fa-align-left"></i>实验室资讯</h4>
+                        <hr style="margin-bottom: 5px;">
 
-					    <div class="media">
-					        <a class="pull-left" href="#">
-					            <img class="img-responsive media-object" src="images/blog1.jpg" alt="Media Object">
-					        </a>
-					        <div class="media-body">
-					            <h4 class="media-heading"><a href="#">Post title 1</a></h4>
-					            This is some sample text. This is some sample text. This is some sample text.
-					        </div>
-					    </div>
-
-					    <div class="media">
-					        <a class="pull-left" href="#">
-					            <img class="img-responsive media-object" src="images/blog2.jpg" alt="Media Object">
-					        </a>
-					        <div class="media-body">
-					            <h4 class="media-heading"><a href="#">Post title 2</a></h4>
-					            This is some sample text. This is some sample text. This is some sample text.
-					        </div>
-					    </div>
-
-					    <div class="media">
-					        <a class="pull-left" href="#">
-					            <img class="img-responsive media-object" src="images/blog3.jpg" alt="Media Object">
-					        </a>
-					        <div class="media-body">
-					            <h4 class="media-heading"><a href="#">Post title 3</a></h4>
-					            This is some sample text. This is some sample text. This is some sample text.
-					        </div>
-					    </div>
-					    <div class="media">
-					        <a class="pull-left" href="#">
-					            <img class="img-responsive media-object" src="images/blog1.jpg" alt="Media Object">
-					        </a>
-					        <div class="media-body">
-					            <h4 class="media-heading"><a href="#">Post title 4</a></h4>
-					            This is some sample text. This is some sample text. This is some sample text.
-					        </div>
-					    </div>
-					</div>
+                        <?php
+                        while ($rowNew = mysqli_fetch_assoc($rsNew)){
+                            $varNew = $rowNew['item_title'];
+                            ?>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="img-responsive media-object" src="images/blog1.jpg" alt="Media Object">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><a href="<?php echo "newCategories.php?title=".$varNew ?>"><?php echo $rowNew['item_title']?></a></h4>
+                                    <?php echo $rowNew['item_brief'] ?>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    </div>
 
 				</aside>
 			</div>
