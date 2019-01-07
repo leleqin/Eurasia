@@ -145,7 +145,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 		<section id="services">
 			<div class="orangeback">
 				<div class="container">
-					<div class="text-center homeport2"><h2>Services</h2></div>
+					<div class="text-center homeport2"><h2>典型案例</h2></div>
 					<div class="row">
 						<div class="col-md-12 homeservices1">
 							<div class="col-md-3 portfolio-item">
@@ -156,8 +156,8 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 									  <i class="fa fa-line-chart fa-stack-1x"></i>
 									</span>
 									</a>
-									<h3><a href="servicesCase.php">典型案例</a></h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+									<h3><a href="servicesCase.php">教学条件</a></h3>
+									<p>为选择不同方向的学生造就不同的工作室学习环境，更好的培养学生在技术和运用的能力，为以后学生在找工作中打下坚实的基础，养成良好的习惯，在做项目中成长。</p>
 								</div>
 							</div>
 							<div class="col-md-3 portfolio-item">
@@ -169,7 +169,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 									</span>
 									</a>
 									<h3><a href="servicesTeach.php">典型教材</a></h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <p>我们开设不同的工作室，例如虚拟交互工作室，ThoughtWorks联合创新工作室，Java Web工作室，“源代码”品牌宣传工作室等，学生不但可以从中成长，更能从中受益。</p>
 								</div>
 							</div>
 							<div class="col-md-3 portfolio-item">
@@ -181,7 +181,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 									</span>
 									</a>
 									<h3><a href="servicesCouse.php">典型课件</a></h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+									<p>校内主干课程（本科）：计算机网络、项目管理、ICT职业素养、编程基础、数据库设计与应用、面向对象程序设计、网络安全技术、移动应用开发</p>
 								</div>
 							</div>
 							<div class="col-md-3 portfolio-item">
@@ -193,7 +193,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 									</span>
 									</a>
 									<h3><a href="learnCompany.php">产学合作</a></h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+									<p>中兴企业课程：职业规划与定位发展、高效沟通与客户管理、项目管理与创新实务、ICT技术发展与行业市场分析、IT项目开发与测试与实现、ICT行业英语</p>
 								</div>
 							</div>
 						</div>
@@ -249,7 +249,7 @@ $rsNew = $conn->query("select * from item WHERE item_name = '资讯'");
 					<div class="col-xs-12 col-sm-6 col-md-3">
 						<div class="team-member">
 							<div class="team-img">
-								<img class="img-responsive" src="images/person1.jpg" alt="">
+                                <img class="img-responsive" src="<?php echo $rowNew['item_file']?>" alt="photo">
 							</div>
 							<div class="team-info">
 								<h3><a href="new.php"><?php echo $rowNew['item_title']?></a></h3>

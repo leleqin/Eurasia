@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="layui-form-item layui-form-text">
-					<label class="layui-form-label">编辑器</label>
+					<label class="layui-form-label">内容编辑</label>
 					<div class="layui-input-block" id="aa">
                         <!-- 加载编辑器的容器 -->
                         <script id="container" name="content" type="text/plain"></script>

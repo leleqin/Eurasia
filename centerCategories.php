@@ -116,7 +116,7 @@ $rsNew = $conn->query("select * from item where item_name = '资讯'");
                             ?>
                             <div class="media">
                                 <a class="pull-left" href="#">
-                                    <img class="img-responsive media-object" src="images/blog1.jpg" alt="Media Object">
+                                    <img class="img-responsive" src="<?php echo $rowNew['item_file']?>" alt="photo">
                                 </a>
                                 <div class="media-body">
                                     <h4 class="media-heading"><a href="<?php echo "newCategories.php?title=".$varNew ?>"><?php echo $rowNew['item_title']?></a></h4>
