@@ -13,7 +13,7 @@
 * layui
 * ueditor
 * html
-* scc
+* css
 * jquery
 * js
 
